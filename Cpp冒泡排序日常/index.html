@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  Cpp冒泡排序日常 |   extmool&#39;s Blog </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header">
+	
+  <nav class="header-inner">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.png">
+      </a>
+    </div>
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+                  
+    </div>  
+    
+  </nav>
+</header>
+
+   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post">
+  
+	
+<div class="post-header">
+	<p class="post-title">	
+		Cpp冒泡排序日常
+	</p>
+
+	<div class="post-info">	
+		<span class="post-info-entry">
+			8月 14, 2018
+		</span>
+
+		
+		
+			<i class="iconfont icon-words"></i>
+			<span class="post-info-entry">1453
+			</span>
+		
+	</div>
+</div> 
+	
+ 
+
+	  <div class="typo post-content slideDownMin">
+
+		
+
+			
+					<p>今天我<del>闲着没事</del>给大家讲一下最基础的排序算法：冒泡排序（BubbleSort）。<br><a id="more"></a></p>
+<h3 id="冒泡排序介绍"><a href="#冒泡排序介绍" class="headerlink" title="冒泡排序介绍"></a>冒泡排序介绍</h3><p><em>冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。<br>它重复地走访过要排序的元素列，一次比较两个相邻的元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素已经排序完成。<br>这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</em></p>
+<h3 id="冒泡排序算法的原理"><a href="#冒泡排序算法的原理" class="headerlink" title="冒泡排序算法的原理"></a>冒泡排序算法的原理</h3><ol>
+<li>比较两个相邻的元素。如果第一个比第二个大（可以相反，也就是第二个比第一个大），就交换他们两个。</li>
+<li>对每一对相邻的元素做同样的工作，<strong>从开始第一对到结尾的最后一对</strong>。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，<strong>直到没有任何一对数字需要比较</strong>。</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintArrayElem</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a[])</span></span>;    <span class="comment">// 输出数组的所有元素</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> a[n] &#123;<span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line"></span><br><span class="line">    PrintArrayElem(n, a);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;   <span class="comment">// 如果直至循环结束仍然为true，则表示此次循环没有进行交换，也就是数组已经是有序的了</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n - <span class="number">1</span> - i; j++)  </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>])  <span class="comment">// 如果前一个数大于后一个数，交换。</span></span><br><span class="line">            &#123;</span><br><span class="line">                swap(a[j], a[j+<span class="number">1</span>]);</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            PrintArrayElem(n, a);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"i="</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="string">"j="</span> &lt;&lt; j &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintArrayElem</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码的运行结果如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line"><span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">过程：</span><br><span class="line"><span class="number">4</span> <span class="number">5</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">i=<span class="number">0</span> j=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">5</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">i=<span class="number">0</span> j=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">5</span> <span class="number">1</span></span><br><span class="line">i=<span class="number">0</span> j=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">0</span> j=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span> <span class="number">4</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">1</span> j=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">4</span> <span class="number">1</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">1</span> j=<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">1</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">1</span> j=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">1</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">2</span> j=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">2</span> j=<span class="number">1</span></span><br><span class="line">结果：</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">i=<span class="number">3</span> j=<span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>看起来不错，对吧？</p>
+<h3 id="时间复杂度与空间复杂度分析"><a href="#时间复杂度与空间复杂度分析" class="headerlink" title="时间复杂度与空间复杂度分析"></a>时间复杂度与空间复杂度分析</h3><p>这个算法看起来<em>“海星”</em>，但是时间复杂度到了一个可怕的程度。</p>
+<h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p><strong>O(n²)</strong></p>
+<p>很可怕的一个数字，对吧？</p>
+<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p><strong>O(1)</strong><br>空间复杂度的话就海星了，只有O(1)的空间复杂度</p>
+  	
+					
+	  </div>     
+	  
+
+	<div class="post-footer">
+
+
+  <div class="post-footer-other">
+    
+      <span class="post-footer-item">
+        
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="No Donate Image!">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="No Donate Image!">	
+	</div>
+
+	<span class="donate-word">世界美好 你也是</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+ 
+      </span>        
+       
+    
+      <span class="post-footer-item">
+        <span class="share-btn">
+	<span class="iconfont icon-share"></span>
+</span>
+<div class="-mob-share sildeUpMin">
+	<ul class="-mob-inner">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-douban 
+		-mob-share-douban 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-facebook 
+		-mob-share-facebook 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-twitter 
+		-mob-share-twitter 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-google 
+		-mob-share-google 
+		-mob-share-link"></li>		
+   	   
+	</ul>
+</div>	
+
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      </span>  
+               
+  </div>  
+    
+
+
+  <div class="post-footer-meta">
+        
+          <i class="iconfont icon-category"></i>       
+          <a class="category-link" href="/categories/C-从入门到入坟/">C++从入门到入坟</a> 	
+      
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/C/">C++</a> <a class="tag-link" href="/tags/程序员的自我修养/">程序员的自我修养</a>    
+        	
+  </div>
+
+</div>
+
+
+<nav class="post-footer-nav">
+  <div class="post-footer-link">
+  
+      <a href="/iPhone设备屏幕尺寸与分辨率/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">older</strong>
+        
+          <a class="post-nav-title" href="/iPhone设备屏幕尺寸与分辨率/">
+          iPhone设备屏幕尺寸与分辨率</a>
+      </a>
+  
+  </div>
+  <div class="post-footer-link">
+    
+        <a href="/iOS12-Beta7更新内容介绍/" id="post-nav-newer" class="post-nav-link-wrap">
+          <strong class="post-nav-caption">newer</strong>
+             
+            <a class="post-nav-title" href="/iOS12-Beta7更新内容介绍/">
+            iOS12 Beta7更新内容介绍</a>
+        </a>
+    
+  </div>
+
+</nav>
+ 
+	
+	
+</article>
+
+          </div> 
+      </div>            
+    
+    <a id="page-backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2019		
+	
+		extmool
+		<br>
+
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>			
+	 
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
+</html>

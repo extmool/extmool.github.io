@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  联发科MT65XX处理器ROM移植教程 |   extmool&#39;s Blog </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header">
+	
+  <nav class="header-inner">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.png">
+      </a>
+    </div>
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+                  
+    </div>  
+    
+  </nav>
+</header>
+
+   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post">
+  
+	
+<div class="post-header">
+	<p class="post-title">	
+		联发科MT65XX处理器ROM移植教程
+	</p>
+
+	<div class="post-info">	
+		<span class="post-info-entry">
+			8月 13, 2018
+		</span>
+
+		
+		
+			<i class="iconfont icon-words"></i>
+			<span class="post-info-entry">5180
+			</span>
+		
+	</div>
+</div> 
+	
+ 
+
+	  <div class="typo post-content slideDownMin">
+
+		
+
+			
+					<blockquote>
+<p>前言：<br>你好朋友,我们都知道有很多基于开源的Android的ROM。<br>但是可能并不适用于您的设备。<br>现在，本指南将帮助您学会为您钟爱的设备移植这些原本不适用于您的设备的ROM<br>必备条件:<br>    用于制作脚本的电脑或者手机<br>    MT管理器（推荐）<br>    Notepad++编辑软件安装程序文件（手机可以使用MT管理器实现）<br>    设备与CWM / TWRP Recovery等测试您移植的ROM<br>    7z或WinRAR或任何其他使zip压缩工具（手机可以使用MT管理器实现）<br>    坚持下去的决心<br>    创造性思维和使用计算机或者手机的一些基本知识<br>本教程适用于：<br>MT65XX同平台移植（包括但不限于MT6582机型相互移植）<br><a id="more"></a></p>
+</blockquote>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A:"></a>Q&amp;A:</h2><p>Q:指南中所提到的文件来自哪里？<br>A:来自于您设备的官方ROM</p>
+<p>Q:我的官方ROM里缺少指南中所提到的文件怎么办？<br>A:直接忽略掉它就行</p>
+<p>Q:我可不可以使用一键移植Boot？<br>A:可以，但是不推荐，因为这可能会导致无法启动或者产生致命BUG</p>
+<p>Q:指南中所提到的替换是不是直接覆盖对应文件夹或者文件？<br>A:请删除后再复制！</p>
+<h2 id="开始移植"><a href="#开始移植" class="headerlink" title="开始移植"></a>开始移植</h2><h3 id="替换文件与文件夹"><a href="#替换文件与文件夹" class="headerlink" title="替换文件与文件夹"></a>替换文件与文件夹</h3><h4 id="需要替换的文件夹"><a href="#需要替换的文件夹" class="headerlink" title="需要替换的文件夹"></a>需要替换的文件夹</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-etc:</span><br><span class="line">/system/etc/buletooth</span><br><span class="line">/system/etc/firmeware</span><br><span class="line">/system/etc/mddb</span><br><span class="line">/system/etc/wifi</span><br><span class="line">-lib:</span><br><span class="line">/system/lib/hw</span><br><span class="line">-usr:</span><br><span class="line">/system/usr/keychars</span><br><span class="line">/system/usr/keylayout</span><br><span class="line">-vendor:</span><br><span class="line">/system/usr/lib</span><br></pre></td></tr></table></figure>
+<h4 id="需要替换的文件"><a href="#需要替换的文件" class="headerlink" title="需要替换的文件"></a>需要替换的文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-lib:</span><br><span class="line">/system/lib/libaudio.primary.default.so</span><br><span class="line">/system/lib/libcameracustom.so</span><br><span class="line">/system/lib/libMail.so</span><br></pre></td></tr></table></figure>
+<h3 id="移植Boot-img"><a href="#移植Boot-img" class="headerlink" title="移植Boot.img"></a>移植Boot.img</h3><p>由于不同的Soc移植方法不同，请自行<a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a>/<a href="https://google.com" target="_blank" rel="noopener">Google</a></p>
+<h2 id="修改build-prop中的一些内容"><a href="#修改build-prop中的一些内容" class="headerlink" title="修改build.prop中的一些内容"></a>修改build.prop中的一些内容</h2><blockquote>
+<p>build文件的位置:<br>/system/build.prop</p>
+</blockquote>
+<p><strong>「请保持build.prop文件的编码为UTF-8」</strong><br><span id="inline-yellow"> 「请保持build.prop文件的编码为UTF-8」 </span></p>
+<blockquote>
+<p><em>本步骤可以忽略，但是您的ROM可能会出现一下状况</em><br><em>不会显示正确的品牌与机型</em><br><em>DPI可能会出现问题</em><br><em>语言和时区可能会不与您所在的地区相符</em></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注:您可以参考您官方ROM的build.prop中的内容进行修改</span><br></pre></td></tr></table></figure>
+<h3 id="修改机型"><a href="#修改机型" class="headerlink" title="修改机型"></a>修改机型</h3><p>在您的build.prop找到以下字段，它们会在比较靠前的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ro.product.model=</span><br><span class="line">ro.product.brand=</span><br><span class="line">ro.product.name=</span><br><span class="line">ro.product.device=</span><br><span class="line">ro.product.board=</span><br><span class="line">ro.product.manufacturer=</span><br><span class="line">ro.build.product=</span><br></pre></td></tr></table></figure></p>
+<p>按下面所展示的内容进行修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ro.product.model=品牌+机型</span><br><span class="line">ro.product.brand=品牌</span><br><span class="line">ro.product.name=机型</span><br><span class="line">ro.product.device=机型</span><br><span class="line">ro.product.board=机型</span><br><span class="line">ro.product.manufacturer=品牌（使用大写字母）</span><br><span class="line">ro.build.product=机型</span><br></pre></td></tr></table></figure></p>
+<p>就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ro.product.model=Xiaomi Redmi 4A</span><br><span class="line">ro.product.brand=Xiaomi</span><br><span class="line">ro.product.name=Redmi 4A</span><br><span class="line">ro.product.device=Redmi 4A</span><br><span class="line">ro.product.board=Redmi 4A</span><br><span class="line">ro.product.manufacturer=XIAOMI</span><br><span class="line">ro.build.product=Redmi 4A</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改语言与时区"><a href="#修改语言与时区" class="headerlink" title="修改语言与时区"></a>修改语言与时区</h3><p>在您的build.prop找到以下字段，它们会在比较靠前的位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ro.product.locale.language=</span><br><span class="line">ro.product.locale.region=</span><br></pre></td></tr></table></figure></p>
+<p>按下面所展示的内容进行修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ro.product.locale.language=语言</span><br><span class="line">ro.product.locale.region=地区</span><br></pre></td></tr></table></figure></p>
+<p>就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ro.product.locale.language=zh</span><br><span class="line">ro.product.locale.region=CN</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改刷机脚本里面的内容"><a href="#修改刷机脚本里面的内容" class="headerlink" title="修改刷机脚本里面的内容"></a>修改刷机脚本里面的内容</h2><h3 id="脚本文件路径"><a href="#脚本文件路径" class="headerlink" title="脚本文件路径"></a>脚本文件路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/META-INF/google/android/updater-script</span><br></pre></td></tr></table></figure>
+<p><strong>请保持updayer-script文件的编码为UTF-8</strong></p>
+<h3 id="去掉机型验证"><a href="#去掉机型验证" class="headerlink" title="去掉机型验证"></a>去掉机型验证</h3><p><em>（如果刷机脚本里没有就跳过此步骤）</em><br>将updater-script中类似于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assert(getprop(&quot;ro.product.device&quot;) == &quot;xxx&quot; ||</span><br><span class="line">   getprop(&quot;ro.build.product&quot;) == &quot;xxx&quot; || getprop(&quot;ro.build.product&quot;) == &quot;xxx&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>的内容去掉即可.</p>
+<h3 id="修改和分区有关的内容"><a href="#修改和分区有关的内容" class="headerlink" title="修改和分区有关的内容"></a>修改和分区有关的内容</h3><p>将updater-script中带有mount字样的语句替换为官方updater-script中带有mount的语句</p>
+<p>就像这样</p>
+<p>这是目标ROM中相关的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount(&quot;ext4&quot;, &quot;EMMC&quot;, &quot;/dev/block/mmcblk0p3&quot;, &quot;/system&quot;);</span><br><span class="line">mount(&quot;ext4&quot;, &quot;EMMC&quot;, &quot;/dev/block/mmcblk0p7&quot;, &quot;/data&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>这是官方ROM中相关的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount(&quot;ext4&quot;, &quot;EMMC&quot;, &quot;/dev/block/mmcblk0p6&quot;, &quot;/system&quot;);</span><br><span class="line">mount(&quot;ext4&quot;, &quot;EMMC&quot;, &quot;/dev/block/mmcblk0p6&quot;, &quot;/data&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>差别很明显，但是不要用我提供的内容进行替换</p>
+<h3 id="在刷机过程中显示一些信息"><a href="#在刷机过程中显示一些信息" class="headerlink" title="在刷机过程中显示一些信息"></a>在刷机过程中显示一些信息</h3><p>这一步骤是无关紧要的，可忽略</p>
+<p>在你认为合适的地方加入一些<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ui_print(&quot; &quot;);</span><br></pre></td></tr></table></figure></p>
+<p>并在引号内加入你想要展示的信息</p>
+<p>就像这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ui_print(&quot;本ROM制作者：extmool &quot;);</span><br><span class="line">ui_print(&quot;发布日期：2018-08-04 &quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="判断并解决一些刷机脚本的错误"><a href="#判断并解决一些刷机脚本的错误" class="headerlink" title="判断并解决一些刷机脚本的错误"></a>判断并解决一些刷机脚本的错误</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">status 1 :错误的原因是传入的参加少于4个。导致错误的地方是install.c::try_update_binary() ，解决方案是换一个Recovery</span><br><span class="line">status 2 :错误的原因是传入的参加中的第二个参加，RECOVERY_API_VERSION,错误，不是 &apos;1&apos;, &apos;2&apos;, &apos;3&apos;,这个要去修改源代码中的Android.mk，所以建议换一个 Recovery</span><br><span class="line">status 3 :刷机包本身有问题，无法被打开, 解决方案，去换一个好的刷机包，或者是重新下载刷机包。</span><br><span class="line">status 4 :无法在刷机包中找到刷机脚本，updater-script ，解决方案，对刷机包重新打包往里面加入updater-script.</span><br><span class="line">status 5 :读取刷机脚本updater-script错误 ,解决方案：重写刷机脚本</span><br><span class="line">status 6 :处理刷机脚本的时候出错 ， 解决方案，重写刷机脚本</span><br><span class="line">status 7 :分析刷机脚本的时候出错了。解决方案，重写刷机脚本，改编码为utf8-no-bom</span><br></pre></td></tr></table></figure>
+<h2 id="修复一些BUG"><a href="#修复一些BUG" class="headerlink" title="修复一些BUG"></a>修复一些BUG</h2><h3 id="通讯录FC"><a href="#通讯录FC" class="headerlink" title="通讯录FC"></a>通讯录FC</h3><p>这个只要替换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libsqlite.so</span><br></pre></td></tr></table></figure></p>
+<p>和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libsqlite_jni.so</span><br></pre></td></tr></table></figure></p>
+<p>这两个文件到ROM即可</p>
+<h3 id="卡第一屏"><a href="#卡第一屏" class="headerlink" title="卡第一屏"></a>卡第一屏</h3><p>这个其实没什么<br>替换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libandroid_runtime.so</span><br></pre></td></tr></table></figure></p>
+<p>即可</p>
+<p><code>注：卡第一屏也可能是Boot出现了问题，可以通过Logcat确定</code></p>
+<h3 id="照相机拍不了照或者拍照卡死或重启"><a href="#照相机拍不了照或者拍照卡死或重启" class="headerlink" title="照相机拍不了照或者拍照卡死或重启"></a>照相机拍不了照或者拍照卡死或重启</h3><p>同样是替换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libandroid_runtime.so</span><br></pre></td></tr></table></figure></p>
+<p>即可</p>
+<h3 id="通话时对方听不到我方声音"><a href="#通话时对方听不到我方声音" class="headerlink" title="通话时对方听不到我方声音"></a>通话时对方听不到我方声音</h3><p>反编译<figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">找到</span><br><span class="line">``` res\values\bools.xml</span><br></pre></td></tr></table></figure></p>
+<p>文件<br>把<figure class="highlight plain"><figcaption><span>name</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">语句中的``` true ```改成``` false</span><br></pre></td></tr></table></figure></p>
+<h3 id="手机要求激活"><a href="#手机要求激活" class="headerlink" title="手机要求激活"></a>手机要求激活</h3><p>–桌面上按菜单键-&gt;设置-&gt;无线和网络-&gt;移动网络-&gt;CDMA订阅-&gt;RUIM/SIM<br>–长按关机键-&gt;启动飞行模式<br>–长按关机键-&gt;关闭飞行模式<br>–如有必要重启一次手机</p>
+<h3 id="手机出现漫游标志"><a href="#手机出现漫游标志" class="headerlink" title="手机出现漫游标志"></a>手机出现漫游标志</h3><p>–设置-&gt;无线和网络-&gt;移动网络-&gt;系统选择-&gt;仅本网<br>–如有必要重复手机要求激活的步骤</p>
+<h3 id="不显示开机动画"><a href="#不显示开机动画" class="headerlink" title="不显示开机动画"></a>不显示开机动画</h3><p>使用官方ROM的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/system/bin/bootanimation</span><br></pre></td></tr></table></figure></p>
+<p>文件替换到ROM里</p>
+<h3 id="彩信不可用"><a href="#彩信不可用" class="headerlink" title="彩信不可用"></a>彩信不可用</h3><p>在MMSC里面写：<a href="http://mmsc.vent.mobi" target="_blank" rel="noopener">http://mmsc.vent.mobi</a><br>彩信代理写：10.0.0.200<br>彩信端口选：80<br>这就为ctnet设置了彩信代理，就可以使选择ctnet联网方式照常接收彩信。</p>
+<h3 id="通话声音或者音乐无声音等BUG"><a href="#通话声音或者音乐无声音等BUG" class="headerlink" title="通话声音或者音乐无声音等BUG"></a>通话声音或者音乐无声音等BUG</h3><p>首先替换bin 下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">audioloop    应该是音频相关的</span><br><span class="line">stagefright  应该是播放声音相关的</span><br><span class="line">mediaserver  媒体服务</span><br></pre></td></tr></table></figure></p>
+<p>然后是lib</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">audio开头全部替换  音频驱动</span><br><span class="line">hw/下audio开头的全部替换  这里面应该是话筒啊,扬声器啊这些的驱动</span><br><span class="line">libstagefright  开头的全部替换  播放声音的驱动</span><br><span class="line">libmedia  开头的全部替换  媒体相关的驱动</span><br></pre></td></tr></table></figure>
+<h3 id="移植成功触屏无法使用"><a href="#移植成功触屏无法使用" class="headerlink" title="移植成功触屏无法使用"></a>移植成功触屏无法使用</h3><p>替换system/sps文件夹（整个替换）</p>
+<h3 id="照相机倒置，白屏"><a href="#照相机倒置，白屏" class="headerlink" title="照相机倒置，白屏"></a>照相机倒置，白屏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system/etc/media_profiles.xml</span><br></pre></td></tr></table></figure>
+<p>打开：media_profiles.xml</p>
+<p>修改里面的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;EncoderProfile quality=&quot;high&quot; fileFormat=&quot;mp4&quot; duration=&quot;60&quot;&gt;</span><br><span class="line">&lt;Video codec=&quot;m4v&quot;</span><br><span class="line">bitRate=&quot;3078000&quot;</span><br><span class="line">width=&quot;640&quot;</span><br><span class="line">height=&quot;480&quot;</span><br><span class="line">frameRate=&quot;30&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;EncoderProfile quality=&quot;high&quot; fileFormat=&quot;mp4&quot; duration=&quot;60&quot;&gt;</span><br><span class="line">&lt;Video codec=&quot;m4v&quot;</span><br><span class="line">bitRate=&quot;3078000&quot;</span><br><span class="line">width=&quot;320&quot;</span><br><span class="line">height=&quot;240&quot;</span><br><span class="line">frameRate=&quot;30&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>修改代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;VideoEncoderCap name=&quot;m4v&quot; enabled=&quot;true&quot;</span><br><span class="line">minBitRate=&quot;96100&quot; maxBitRate=&quot;2500000&quot;</span><br><span class="line">minFrameWidth=&quot;176&quot; maxFrameWidth=&quot;640&quot;</span><br><span class="line">minFrameHeight=&quot;144&quot; maxFrameHeight=&quot;480&quot;</span><br><span class="line">minFrameRate=&quot;1&quot; maxFrameRate=&quot;30&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;VideoEncoderCap name=&quot;m4v&quot; enabled=&quot;true&quot;</span><br><span class="line">minBitRate=&quot;96100&quot; maxBitRate=&quot;2500000&quot;</span><br><span class="line">minFrameWidth=&quot;176&quot; maxFrameWidth=&quot;320&quot;</span><br><span class="line">minFrameHeight=&quot;144&quot; maxFrameHeight=&quot;240&quot;</span><br><span class="line">minFrameRate=&quot;1&quot; maxFrameRate=&quot;30&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>修改后保存即可</p>
+  	
+					
+	  </div>     
+	  
+
+	<div class="post-footer">
+
+
+  <div class="post-footer-other">
+    
+      <span class="post-footer-item">
+        
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="No Donate Image!">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="No Donate Image!">	
+	</div>
+
+	<span class="donate-word">世界美好 你也是</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+ 
+      </span>        
+       
+    
+      <span class="post-footer-item">
+        <span class="share-btn">
+	<span class="iconfont icon-share"></span>
+</span>
+<div class="-mob-share sildeUpMin">
+	<ul class="-mob-inner">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-douban 
+		-mob-share-douban 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-facebook 
+		-mob-share-facebook 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-twitter 
+		-mob-share-twitter 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-google 
+		-mob-share-google 
+		-mob-share-link"></li>		
+   	   
+	</ul>
+</div>	
+
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      </span>  
+               
+  </div>  
+    
+
+
+  <div class="post-footer-meta">
+        
+          <i class="iconfont icon-category"></i>       
+          <a class="category-link" href="/categories/联发科处理器ROM制作教程/">联发科处理器ROM制作教程</a> 	
+      
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/ROM制作/">ROM制作</a> <a class="tag-link" href="/tags/只要刷不坏，就往死里刷/">只要刷不坏，就往死里刷</a>    
+        	
+  </div>
+
+</div>
+
+
+<nav class="post-footer-nav">
+  <div class="post-footer-link">
+  
+  </div>
+  <div class="post-footer-link">
+    
+        <a href="/iOS12-DB预览版描述文件/" id="post-nav-newer" class="post-nav-link-wrap">
+          <strong class="post-nav-caption">newer</strong>
+             
+            <a class="post-nav-title" href="/iOS12-DB预览版描述文件/">
+            iOS12 介绍及DB预览版描述文件下载</a>
+        </a>
+    
+  </div>
+
+</nav>
+ 
+	
+	
+</article>
+
+          </div> 
+      </div>            
+    
+    <a id="page-backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2019		
+	
+		extmool
+		<br>
+
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>			
+	 
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  洛谷P1000题解-大佬们都是怎么把题玩出新花样的 |   extmool&#39;s Blog </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header">
+	
+  <nav class="header-inner">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.png">
+      </a>
+    </div>
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+                  
+    </div>  
+    
+  </nav>
+</header>
+
+   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post">
+  
+	
+<div class="post-header">
+	<p class="post-title">	
+		洛谷P1000题解-大佬们都是怎么把题玩出新花样的
+	</p>
+
+	<div class="post-info">	
+		<span class="post-info-entry">
+			8月 17, 2018
+		</span>
+
+		
+		
+			<i class="iconfont icon-words"></i>
+			<span class="post-info-entry">4747
+			</span>
+		
+	</div>
+</div> 
+	
+ 
+
+	  <div class="typo post-content slideDownMin">
+
+		
+
+			
+					<p>作为洛谷上的试机题目”P1000”,他还是被玩坏了。</p>
+<a id="more"></a>
+<h3 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h3><p>本题是洛谷的试机题目，可以帮助了解洛谷的使用。</p>
+<p>建议完成本题目后继续尝试P1001、P1008。</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>超级玛丽是一个非常经典的游戏。请你用字符画的形式输出超级玛丽中的一个场景。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">                ********</span><br><span class="line">               ************</span><br><span class="line">               ####....#.</span><br><span class="line">             #..###.....##....</span><br><span class="line">             ###.......######              ###            ###</span><br><span class="line">                ...........               #...#          #...#</span><br><span class="line">               ##*#######                 #.#.#          #.#.#</span><br><span class="line">            ####*******######             #.#.#          #.#.#</span><br><span class="line">           ...#***.****.*###....          #...#          #...#</span><br><span class="line">           ....**********##.....           ###            ###</span><br><span class="line">           ....****    *****....</span><br><span class="line">             ####        ####</span><br><span class="line">           ######        ######</span><br><span class="line">##############################################################</span><br><span class="line">#...#......#.##...#......#.##...#......#.##------------------#</span><br><span class="line">###########################################------------------#</span><br><span class="line">#..#....#....##..#....#....##..#....#....#####################</span><br><span class="line">##########################################    #----------#</span><br><span class="line">#.....#......##.....#......##.....#......#    #----------#</span><br><span class="line">##########################################    #----------#</span><br><span class="line">#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#</span><br><span class="line">##########################################    ############</span><br></pre></td></tr></table></figure>
+<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>无</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>如描述</p>
+<p>这样一道冰清玉洁的题怎么会被玩坏呢！！！</p>
+<p>但是，<br>大佬就是大佬<br>还是把它玩坏掉了……</p>
+<h3 id="标程"><a href="#标程" class="headerlink" title="标程"></a>标程</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(</span><br><span class="line">    <span class="string">"                ********\n"</span></span><br><span class="line">    <span class="string">"               ************\n"</span></span><br><span class="line">    <span class="string">"               ####....#.\n"</span></span><br><span class="line">    <span class="string">"             #..###.....##....\n"</span></span><br><span class="line">    <span class="string">"             ###.......######              ###            ###\n"</span></span><br><span class="line">    <span class="string">"                ...........               #...#          #...#\n"</span></span><br><span class="line">    <span class="string">"               ##*#######                 #.#.#          #.#.#\n"</span></span><br><span class="line">    <span class="string">"            ####*******######             #.#.#          #.#.#\n"</span></span><br><span class="line">    <span class="string">"           ...#***.****.*###....          #...#          #...#\n"</span></span><br><span class="line">    <span class="string">"           ....**********##.....           ###            ###\n"</span></span><br><span class="line">    <span class="string">"           ....****    *****....\n"</span></span><br><span class="line">    <span class="string">"             ####        ####\n"</span></span><br><span class="line">    <span class="string">"           ######        ######\n"</span></span><br><span class="line">    <span class="string">"##############################################################\n"</span></span><br><span class="line">    <span class="string">"#...#......#.##...#......#.##...#......#.##------------------#\n"</span></span><br><span class="line">    <span class="string">"###########################################------------------#\n"</span></span><br><span class="line">    <span class="string">"#..#....#....##..#....#....##..#....#....#####################\n"</span></span><br><span class="line">    <span class="string">"##########################################    #----------#\n"</span></span><br><span class="line">    <span class="string">"#.....#......##.....#......##.....#......#    #----------#\n"</span></span><br><span class="line">    <span class="string">"##########################################    #----------#\n"</span></span><br><span class="line">    <span class="string">"#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#\n"</span></span><br><span class="line">    <span class="string">"##########################################    ############\n"</span></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="开始玩坏了"><a href="#开始玩坏了" class="headerlink" title="开始玩坏了"></a>开始玩坏了</h3><h4 id="最作死办法"><a href="#最作死办法" class="headerlink" title="最作死办法"></a>最作死办法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> last[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">22</span>, m = <span class="number">62</span>;</span><br><span class="line"><span class="comment">// 在[x1-x2, y1-y2]绘制ch</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">int</span> x2, <span class="keyword">int</span> y2, <span class="keyword">char</span> ch = <span class="string">'#'</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = x1; i &lt;= x2; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = y1; j &lt;= y2; j++)</span><br><span class="line">            mp[i][j] = ch;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 在[x1, y1]绘制ch</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> y1, <span class="keyword">char</span> ch = <span class="string">'#'</span>)</span></span>&#123;</span><br><span class="line">    draw(x1, y1, x1, y1, ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 以[x, y]为左上角绘制泥土</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawland</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    draw(x, y, x+<span class="number">8</span>, y+<span class="number">13</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = x+<span class="number">1</span>; i &lt; x+<span class="number">8</span>; i+=<span class="number">2</span>)</span><br><span class="line">        draw(i, y+<span class="number">1</span>, i, y+<span class="number">12</span>, <span class="string">'.'</span>);</span><br><span class="line">    draw(x+<span class="number">1</span>, y+<span class="number">4</span>); draw(x+<span class="number">1</span>, y+<span class="number">11</span>);</span><br><span class="line">    draw(x+<span class="number">3</span>, y+<span class="number">3</span>); draw(x+<span class="number">3</span>, y+<span class="number">8</span>);</span><br><span class="line">    draw(x+<span class="number">5</span>, y+<span class="number">6</span>); draw(x+<span class="number">7</span>, y+<span class="number">2</span>);</span><br><span class="line">    draw(x+<span class="number">7</span>, y+<span class="number">5</span>); draw(x+<span class="number">7</span>, y+<span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 以[x, y]为左上角绘制小岛</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawisland</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    draw(x, y, x+<span class="number">3</span>, y+<span class="number">19</span>);</span><br><span class="line">    draw(x+<span class="number">1</span>, y+<span class="number">1</span>, x+<span class="number">2</span>, y+<span class="number">18</span>, <span class="string">'-'</span>);</span><br><span class="line">    draw(x+<span class="number">4</span>, y+<span class="number">4</span>, x+<span class="number">8</span>, y+<span class="number">15</span>);</span><br><span class="line">    draw(x+<span class="number">4</span>, y+<span class="number">5</span>, x+<span class="number">7</span>, y+<span class="number">14</span>, <span class="string">'-'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 以[x, y]为左上角绘制金币</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawcoin</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    draw(x, y, x+<span class="number">5</span>, y+<span class="number">4</span>);</span><br><span class="line">    draw(x+<span class="number">1</span>, y+<span class="number">1</span>, x+<span class="number">4</span>, y+<span class="number">3</span>, <span class="string">'.'</span>);</span><br><span class="line">    draw(x+<span class="number">2</span>, y+<span class="number">2</span>, x+<span class="number">3</span>, y+<span class="number">2</span>);</span><br><span class="line">    draw(x, y, <span class="string">' '</span>); draw(x+<span class="number">5</span>, y, <span class="string">' '</span>);</span><br><span class="line">    draw(x, y+<span class="number">4</span>, <span class="string">' '</span>); draw(x+<span class="number">5</span>, y+<span class="number">4</span>, <span class="string">' '</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 以[x, y]为左上角绘制马里奥</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">drawman</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    draw(x, y+<span class="number">5</span>, x, y+<span class="number">12</span>, <span class="string">'*'</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">4</span>, x, y+<span class="number">15</span>, <span class="string">'*'</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">4</span>, x, y+<span class="number">7</span>); draw(x, y+<span class="number">8</span>, x, y+<span class="number">13</span>, <span class="string">'.'</span>); draw(x, y+<span class="number">12</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">2</span>, x, y+<span class="number">14</span>); draw(x, y+<span class="number">3</span>, x, y+<span class="number">4</span>, <span class="string">'.'</span>);</span><br><span class="line">    draw(x, y+<span class="number">8</span>, x, y+<span class="number">12</span>, <span class="string">'.'</span>); draw(x, y+<span class="number">15</span>, x, y+<span class="number">18</span>, <span class="string">'.'</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">2</span>, x, y+<span class="number">17</span>); draw(x, y+<span class="number">5</span>, x, y+<span class="number">11</span>, <span class="string">'.'</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">5</span>, x, y+<span class="number">15</span>, <span class="string">'.'</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">4</span>, x, y+<span class="number">13</span>); draw(x, y+<span class="number">6</span>, <span class="string">'*'</span>); x++;</span><br><span class="line">    draw(x, y+<span class="number">1</span>, x, y+<span class="number">17</span>); draw(x, y+<span class="number">5</span>, x, y+<span class="number">11</span>, <span class="string">'*'</span>); x++;</span><br><span class="line">    draw(x, y, x+<span class="number">2</span>, y+<span class="number">20</span>, <span class="string">'.'</span>); draw(x, y+<span class="number">4</span>, x+<span class="number">2</span>, y+<span class="number">16</span>, <span class="string">'*'</span>);</span><br><span class="line">    draw(x, y+<span class="number">3</span>); draw(x, y+<span class="number">14</span>, x+<span class="number">1</span>, y+<span class="number">16</span>); draw(x+<span class="number">1</span>, y+<span class="number">16</span>, <span class="string">'.'</span>);</span><br><span class="line">    draw(x+<span class="number">2</span>, y+<span class="number">8</span>, x+<span class="number">2</span>, y+<span class="number">11</span>, <span class="string">' '</span>); draw(x, y+<span class="number">7</span>, <span class="string">'.'</span>); draw(x, y+<span class="number">12</span>, <span class="string">'.'</span>);</span><br><span class="line">    draw(x+<span class="number">3</span>, y, x+<span class="number">4</span>, y+<span class="number">19</span>); draw(x+<span class="number">3</span>, y+<span class="number">6</span>, x+<span class="number">4</span>, y+<span class="number">13</span>, <span class="string">' '</span>);</span><br><span class="line">    draw(x+<span class="number">3</span>, y, x+<span class="number">3</span>, y+<span class="number">1</span>, <span class="string">' '</span>); draw(x+<span class="number">3</span>, y+<span class="number">18</span>, x+<span class="number">3</span>, y+<span class="number">19</span>, <span class="string">' '</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printscreen</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        last[i] = m;</span><br><span class="line">        <span class="keyword">while</span>(mp[i][last[i]] == <span class="string">' '</span>)</span><br><span class="line">            last[i]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++,<span class="built_in">puts</span>(<span class="string">""</span>))</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= last[i]; j++)</span><br><span class="line">            <span class="built_in">putchar</span>(mp[i][j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            mp[i][j] = <span class="string">' '</span>;</span><br><span class="line">    <span class="comment">// 绘制人</span></span><br><span class="line">    drawman(<span class="number">1</span>, <span class="number">12</span>);</span><br><span class="line">    <span class="comment">// 绘制他脚下的三块泥土</span></span><br><span class="line">    drawland(<span class="number">14</span>, <span class="number">1</span>); drawland(<span class="number">14</span>, <span class="number">15</span>); drawland(<span class="number">14</span>, <span class="number">29</span>);</span><br><span class="line">    <span class="comment">// 绘制金币下面的那个岛屿</span></span><br><span class="line">    drawisland(<span class="number">14</span>, <span class="number">43</span>);</span><br><span class="line">    <span class="comment">// 绘制两个金币</span></span><br><span class="line">    drawcoin(<span class="number">5</span>, <span class="number">43</span>); drawcoin(<span class="number">5</span>, <span class="number">58</span>);</span><br><span class="line">    <span class="comment">// 输出</span></span><br><span class="line">    printscreen();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="这是什么打表操作"><a href="#这是什么打表操作" class="headerlink" title="这是什么打表操作"></a>这是什么打表操作</h4><p>一行一行复制是不可能的，一辈子都不可能的，这种丑陋的方法不应该是高端程序猿应该干的事情。<br>我们先在本地写一段这个代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">    s=<span class="string">""</span>;</span><br><span class="line">    <span class="keyword">while</span>(c=getchar(),c!=<span class="string">'\n'</span>&amp;&amp;c!=EOF)</span><br><span class="line">        s=s+c;</span><br><span class="line">    <span class="keyword">if</span>(c==EOF)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    freopen(<span class="string">"data.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"#include&lt;cstdio&gt;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"int main()"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"&#123;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">while</span>(read())&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"    printf(\""</span>&lt;&lt;s&lt;&lt;<span class="string">"\\n\");"</span>&lt;&lt;<span class="built_in">endl</span>;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"    return 0;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"&#125;"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们把题目中给的字符画输进去，提交输出文件就可以了（手动滑稽）。</p>
+<p>这一期也是安稳的凑够了字数呢!</p>
+<p>———-END———-</p>
+  	
+					
+	  </div>     
+	  
+
+	<div class="post-footer">
+
+
+  <div class="post-footer-other">
+    
+      <span class="post-footer-item">
+        
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="No Donate Image!">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="No Donate Image!">	
+	</div>
+
+	<span class="donate-word">世界美好 你也是</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+ 
+      </span>        
+       
+    
+      <span class="post-footer-item">
+        <span class="share-btn">
+	<span class="iconfont icon-share"></span>
+</span>
+<div class="-mob-share sildeUpMin">
+	<ul class="-mob-inner">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-douban 
+		-mob-share-douban 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-facebook 
+		-mob-share-facebook 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-twitter 
+		-mob-share-twitter 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-google 
+		-mob-share-google 
+		-mob-share-link"></li>		
+   	   
+	</ul>
+</div>	
+
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      </span>  
+               
+  </div>  
+    
+
+
+  <div class="post-footer-meta">
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/C/">C++</a> <a class="tag-link" href="/tags/大佬就是大佬/">大佬就是大佬</a>    
+        	
+  </div>
+
+</div>
+
+
+<nav class="post-footer-nav">
+  <div class="post-footer-link">
+  
+      <a href="/macOS-10-14-Mojave-介绍及DB预览版描述文件下载/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">older</strong>
+        
+          <a class="post-nav-title" href="/macOS-10-14-Mojave-介绍及DB预览版描述文件下载/">
+          macOS 10.14 Mojave 介绍及DB预览版描述文件下载</a>
+      </a>
+  
+  </div>
+  <div class="post-footer-link">
+    
+        <a href="/Linux下各种有趣的命令/" id="post-nav-newer" class="post-nav-link-wrap">
+          <strong class="post-nav-caption">newer</strong>
+             
+            <a class="post-nav-title" href="/Linux下各种有趣的命令/">
+            Linux下各种有趣的命令</a>
+        </a>
+    
+  </div>
+
+</nav>
+ 
+	
+	
+</article>
+
+          </div> 
+      </div>            
+    
+    <a id="page-backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2019		
+	
+		extmool
+		<br>
+
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>			
+	 
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  </body>        
+</html>
