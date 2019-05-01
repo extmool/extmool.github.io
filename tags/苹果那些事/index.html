@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!DOCTYPE html>
 <html>
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,50 +17,56 @@
 </head>  
   <body>   
     
-      <header class="header">
-	
-  <nav class="header-inner">        
+      <header class="header-wrapper">
 
-    <span class="iconfont icon-menu mobile-toggle"></span>   	
-
-    <div class="header-logo">
+  <nav class="inner">
+    <div class="title">
       <a href="/">
-        <img class="header-logo-img" src="/images/logo.png">
+        <img class="logo" src="/images/logo.png">
       </a>
     </div>
 
-    <div class="header-menu">          
-              
-          
-            <a class="header-menu-link" id="header-menu-home" href="/">
-              <i class="iconfont icon-home">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-archives" href="/archives">
-              <i class="iconfont icon-archives">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-tags" href="/tags">
-              <i class="iconfont icon-tags">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-about" href="/about">
-              <i class="iconfont icon-about">  
-            </i></a>     
-          
-                  
-    </div>  
-    
+    <ul class="menu">
+      
+      
+      <li class="item">
+        <a class="link" id="menu-home" href="/">
+          <i class="iconfont icon-home">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-archives" href="/archives">
+          <i class="iconfont icon-archives">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-tags" href="/tags">
+          <i class="iconfont icon-tags">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-about" href="/about">
+          <i class="iconfont icon-about">
+        </i></a>
+      </li>
+      
+      
+    </ul>
   </nav>
 </header>
 
-   
+<header class="mobile-header-wrapper">
+  <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+</header>   
 
       <div class="container">       
           
@@ -69,57 +75,74 @@
           
 
           <section>
+
+  
   
 
-      <span class="page-title"># 苹果那些事</span>   
-        
-             
+  
 
-            	
+  
+        
+<div class="page-name">
+    <i class="iconfont icon-page-tags"></i>
+    <span class="name">苹果那些事</span>
+</div>
+
+
+        <div class="items">
+                 
+
+                	
 
 	   
 
 	   <article class="item slideDownMin">   	
 
-        <time class="item-date"> 2018-08-16</time>    
+        <time class="time"> 2018-08-16</time>    
 
-        <a class="item-title" href="/macOS-10-14-Mojave-介绍及DB预览版描述文件下载/">macOS 10.14 Mojave 介绍及DB预览版描述文件下载</a>
+        <a class="title" href="/macOS-10-14-Mojave-介绍及DB预览版描述文件下载/">macOS 10.14 Mojave 介绍及DB预览版描述文件下载</a>
 
       </article>
 
        
 
-             
+                 
 
-            	
+                	
 
 	   
 
 	   <article class="item slideDownMin">   	
 
-        <time class="item-date"> 2018-08-16</time>    
+        <time class="time"> 2018-08-16</time>    
 
-        <a class="item-title" href="/watchOS5-介绍及DB预览版描述文件下载/">watchOS5 介绍及DB预览版描述文件下载</a>
+        <a class="title" href="/watchOS5-介绍及DB预览版描述文件下载/">watchOS5 介绍及DB预览版描述文件下载</a>
 
       </article>
 
        
 
-        
+            
+        </div>
+
 
     
 </section>
           </div> 
       </div>            
     
-    <a id="page-backTop">
-      <span>
-        <i class="iconfont icon-backtotop"></i>
-      </span>
-    </a> 
+        <i id="toTop" class="iconfont icon-backtotop"></i>
 
   
-    
+    <div class="none" id="search">
+    <div class="header">
+        <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
+        
+        <i id="search-cancel" class="iconfont icon-cancel"></i>
+    </div>
+
+    <div id="search-result" class="result"></div>
+</div>
      <div class="mobile-menu">      
 
       
@@ -162,22 +185,18 @@
     
 
 
+<footer class="footer">
+	<div class="inner">
+		<div class="copyright">
+			&copy;
+			
+			2019
+			extmool
 
-
-<footer id="footer">	    
-
-		
-		<div class="footer-copyright">
-		&copy;
-		
-		2019		
-	
-		extmool
-		<br>
-
-		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
-		</div>			
-	 
+			<br>
+			By <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>
+	</div>
 </footer>   
 
     <script src="/nayo.bundle.js"></script>           

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<!DOCTYPE html>
 <html>
   <head><meta name="generator" content="Hexo 3.8.0">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,50 +17,56 @@
 </head>  
   <body>   
     
-      <header class="header">
-	
-  <nav class="header-inner">        
+      <header class="header-wrapper">
 
-    <span class="iconfont icon-menu mobile-toggle"></span>   	
-
-    <div class="header-logo">
+  <nav class="inner">
+    <div class="title">
       <a href="/">
-        <img class="header-logo-img" src="/images/logo.png">
+        <img class="logo" src="/images/logo.png">
       </a>
     </div>
 
-    <div class="header-menu">          
-              
-          
-            <a class="header-menu-link" id="header-menu-home" href="/">
-              <i class="iconfont icon-home">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-archives" href="/archives">
-              <i class="iconfont icon-archives">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-tags" href="/tags">
-              <i class="iconfont icon-tags">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-about" href="/about">
-              <i class="iconfont icon-about">  
-            </i></a>     
-          
-                  
-    </div>  
-    
+    <ul class="menu">
+      
+      
+      <li class="item">
+        <a class="link" id="menu-home" href="/">
+          <i class="iconfont icon-home">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-archives" href="/archives">
+          <i class="iconfont icon-archives">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-tags" href="/tags">
+          <i class="iconfont icon-tags">
+        </i></a>
+      </li>
+      
+      
+      
+      <li class="item">
+        <a class="link" id="menu-about" href="/about">
+          <i class="iconfont icon-about">
+        </i></a>
+      </li>
+      
+      
+    </ul>
   </nav>
 </header>
 
-   
+<header class="mobile-header-wrapper">
+  <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+</header>   
 
       <div class="container">       
           
@@ -68,31 +74,50 @@
             <div class="container-inner">  
           
 
-          <article class="post">
+          <article class="post slideDownMin">
   
 	
-<div class="post-header">
-	<p class="post-title">	
-		如何看待CCF公布的NOIP2018初赛违规事件？
-	</p>
+<div class="header">
+		<p class="title">	
+			如何看待CCF公布的NOIP2018初赛违规事件？
+		</p>
+		<div class="info">	
+			<time>
+				11月 02, 2018
+			</time>
 
-	<div class="post-info">	
-		<span class="post-info-entry">
-			11月 02, 2018
-		</span>
-
-		
-		
-			<i class="iconfont icon-words"></i>
-			<span class="post-info-entry">383
-			</span>
-		
-	</div>
+			
+			
+				<i class="iconfont icon-words"></i>
+				<span class="words">383
+				</span>
+			
+		</div>
 </div> 
 	
+
+    <script type="text/x-mathjax-config">
+        var post = document.getElementsByClassName("post")[0];  
+        MathJax.Hub.Config({
+            showProcessingMessages: false,
+            messageStyle: "none",    
+            tex2jax: {
+                inlineMath:  [ ["$", "$"] , ["\\(","\\)"]],
+                displayMath: [ ["$$","$$"] , ["\\[","\\]"]],
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+            },
+            "HTML-CSS": {            
+                showMathMenu: false
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,post]);
+    </script>
+    <style>.MathJax{outline:0;}</style>
+
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
  
 
-	  <div class="typo post-content slideDownMin">
+	  <div class="typo post-content ">
 
 		
 
@@ -124,144 +149,94 @@
 	  </div>     
 	  
 
-	<div class="post-footer">
+	<div class="bottom">
+  <div class="other">
+    <div class="meta">
+      
 
+      
+      <i class="iconfont icon-tag"></i>
+      <a class="tag-link" href="/tags/NOIP/">NOIP</a> <a class="tag-link" href="/tags/€€£的各种神奇操作/">€€£的各种神奇操作</a>
+      
+    </div>
 
-  <div class="post-footer-other">
-    
-      <span class="post-footer-item">
-        
-
-
-<span class="donate-btn">
-	<span class="iconfont icon-donate"></span>
-</span>
-
-<div id="donate-box" class="sildeUpMin">
-
-	<span class="donate-cancel iconfont icon-cancel"></span>
-
-	<div class="donate-img-box">
-		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="No Donate Image!">	
-		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="No Donate Image!">	
-	</div>
-
-	<span class="donate-word">世界美好 你也是</span>
-
-	<div class="donate-list">
-		<span class="iconfont icon-donate-wechat"></span>
-		<span class="iconfont icon-donate-alipay"></span>
-	</div>
-
-</div>
- 
-      </span>        
-       
-    
-      <span class="post-footer-item">
-        <span class="share-btn">
-	<span class="iconfont icon-share"></span>
-</span>
-<div class="-mob-share sildeUpMin">
-	<ul class="-mob-inner">
+    <div class="operate">
+      
+      <span class="text">Share</span>
+      <ul class="share">
 	   			             
         <li class="iconfont 
 		icon-share-qq 
 		-mob-share-qq 
-		-mob-share-link"></li>		
+		item"></li>		
    	   			             
         <li class="iconfont 
 		icon-share-weixin 
 		-mob-share-weixin 
-		-mob-share-link"></li>		
+		item"></li>		
    	   			             
         <li class="iconfont 
 		icon-share-weibo 
 		-mob-share-weibo 
-		-mob-share-link"></li>		
-   	   			             
-        <li class="iconfont 
-		icon-share-douban 
-		-mob-share-douban 
-		-mob-share-link"></li>		
-   	   			             
-        <li class="iconfont 
-		icon-share-facebook 
-		-mob-share-facebook 
-		-mob-share-link"></li>		
-   	   			             
-        <li class="iconfont 
-		icon-share-twitter 
-		-mob-share-twitter 
-		-mob-share-link"></li>		
-   	   			             
-        <li class="iconfont 
-		icon-share-google 
-		-mob-share-google 
-		-mob-share-link"></li>		
+		item"></li>		
    	   
-	</ul>
-</div>	
-
+</ul>	
 
 <script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
-      </span>  
-               
-  </div>  
-    
-
-
-  <div class="post-footer-meta">
-        	
-
-        
-          <i class="iconfont icon-tag"></i>     
-            <a class="tag-link" href="/tags/NOIP/">NOIP</a> <a class="tag-link" href="/tags/€€£的各种神奇操作/">€€£的各种神奇操作</a>    
-        	
+      
+    </div>
   </div>
 
-</div>
 
-
-<nav class="post-footer-nav">
-  <div class="post-footer-link">
   
-      <a href="/背包问题的一些基本思路/" id="post-nav-older" class="post-nav-link-wrap">
-        <strong class="post-nav-caption">older</strong>
+  <nav class="nav">
+    <div class="link">
+      
+      <a href="/背包问题的一些基本思路/" class="link-wrap">
+        <strong class="caption">older</strong>
         
-          <a class="post-nav-title" href="/背包问题的一些基本思路/">
-          背包问题的一些基本思路</a>
+        <span class="title">
+          背包问题的一些基本思路
+        </span>
       </a>
+      
+    </div>
+    <div class="link">
+      
+      <a href="/NOIP2018普及组游记/" class="link-wrap">
+        <strong class="caption">newer</strong>
+        
+        <span class="title">
+          NOIP2018普及组游记
+        </span>
+      </a>
+      
+    </div>
+  </nav>
   
-  </div>
-  <div class="post-footer-link">
-    
-        <a href="/NOIP2018普及组游记/" id="post-nav-newer" class="post-nav-link-wrap">
-          <strong class="post-nav-caption">newer</strong>
-             
-            <a class="post-nav-title" href="/NOIP2018普及组游记/">
-            NOIP2018普及组游记</a>
-        </a>
-    
-  </div>
+</div> 
+	
+<div class="comment">
 
-</nav>
- 
-	
-	
+    
+</div>	
 </article>
 
           </div> 
       </div>            
     
-    <a id="page-backTop">
-      <span>
-        <i class="iconfont icon-backtotop"></i>
-      </span>
-    </a> 
+        <i id="toTop" class="iconfont icon-backtotop"></i>
 
   
-    
+    <div class="none" id="search">
+    <div class="header">
+        <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
+        
+        <i id="search-cancel" class="iconfont icon-cancel"></i>
+    </div>
+
+    <div id="search-result" class="result"></div>
+</div>
      <div class="mobile-menu">      
 
       
@@ -304,22 +279,18 @@
     
 
 
+<footer class="footer">
+	<div class="inner">
+		<div class="copyright">
+			&copy;
+			
+			2019
+			extmool
 
-
-<footer id="footer">	    
-
-		
-		<div class="footer-copyright">
-		&copy;
-		
-		2019		
-	
-		extmool
-		<br>
-
-		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
-		</div>			
-	 
+			<br>
+			By <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>
+	</div>
 </footer>   
 
     <script src="/nayo.bundle.js"></script>           
