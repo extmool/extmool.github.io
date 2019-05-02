@@ -90,7 +90,7 @@
 		
 		
 			<i class="iconfont icon-words"></i>
-			<span class="post-info-entry">22
+			<span class="post-info-entry">450
 			</span>
 		
 	</div>
@@ -105,6 +105,24 @@
 			
 					<p>当你的同学没有锁电脑的时候……</p>
 <a id="more"></a>
+<p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p>
+<p>以下命令均在 Windows10 专业工作站版 测试通过，其他系统请自测。</p>
+<h2 id="轻微毒瘤"><a href="#轻微毒瘤" class="headerlink" title="轻微毒瘤"></a>轻微毒瘤</h2><h3 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h3><p>当你的朋友还有东西没有保存的时候，这个命令着实有效……</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -f -s -t <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.ax1x.com/2019/05/02/EYL2kD.png" alt="关机.png"></p>
+<h3 id="杀explorer-exe"><a href="#杀explorer-exe" class="headerlink" title="杀explorer.exe"></a>杀explorer.exe</h3><p>这个命令配合 <code>Win + D</code> 组合键使用更佳 </p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">taskkill</span> -f -im explorer.exe</span><br></pre></td></tr></table></figure>
+<p>或<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntsd -c q -pn explorer.exe</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://s2.ax1x.com/2019/05/02/EYOs3j.png" alt="taskkill.png"></p>
+<h2 id="中度毒瘤"><a href="#中度毒瘤" class="headerlink" title="中度毒瘤"></a>中度毒瘤</h2><h3 id="卡死电脑"><a href="#卡死电脑" class="headerlink" title="卡死电脑"></a>卡死电脑</h3><p>会死机，解决办法是 <code>taskkill -f -im cmd.exe</code> </p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%<span class="number">0</span> | %<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.ax1x.com/2019/05/02/EYObK1.png" alt="%0|%0.png"></p>
+<h2 id="重度毒瘤"><a href="#重度毒瘤" class="headerlink" title="重度毒瘤"></a>重度毒瘤</h2><h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>当你的朋友习惯把东西存到非系统盘的时候……</p>
+<p>注意，此命令只能在带有管理员权限的命令提示符窗口或Powershell中使用！</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span> D: /u /s</span><br><span class="line"><span class="built_in">format</span> E: /u /s</span><br><span class="line"><span class="built_in">format</span> F: /u /s</span><br></pre></td></tr></table></figure>
+<p><img src="https://s2.ax1x.com/2019/05/02/EYOwE8.png" alt="format.png"></p>
+<h3 id="比格式化死得更惨的一种方式"><a href="#比格式化死得更惨的一种方式" class="headerlink" title="比格式化死得更惨的一种方式"></a>比格式化死得更惨的一种方式</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> C:\windows\system32\*.dll /f /s /q</span><br></pre></td></tr></table></figure>
+<p>没有截图，万一我手残了一下呢……23333</p>
 <hr>
 <p>[完]</p>
   	
@@ -130,8 +148,8 @@
 	<span class="donate-cancel iconfont icon-cancel"></span>
 
 	<div class="donate-img-box">
-		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="No Donate Image!">	
-		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="No Donate Image!">	
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="No Donate Image!" data-src="/images/donate.png">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="No Donate Image!" data-src="/">	
 	</div>
 
 	<span class="donate-word">世界美好 你也是</span>
@@ -278,7 +296,7 @@
      <div class="mobile-menu">      
 
       
-      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      <img class="mobile-menu-icon lazyload" src="/images/placeholder.png" data-src="/images/favicon.png">  
       
 
          
