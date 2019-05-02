@@ -5,7 +5,7 @@
     <entry>
       <title>如何正确地机惨</title>
       <link href="//posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-Windows%E7%AF%87/"/>
-      <content type="html"><![CDATA[<p>闲着没事安利一发自己用的顺手的东西（大雾<br><a id="more"></a></p><h2 id="Windows端"><a href="#Windows端" class="headerlink" title="Windows端"></a>Windows端</h2><h3 id="BandiZip"><a href="#BandiZip" class="headerlink" title="BandiZip"></a>BandiZip</h3><p><img src="https://s2.ax1x.com/2019/05/01/EJoVuF.png" alt="BandiZip.png"></p><p>压缩工具，UI看着很顺眼，右键压缩包可以预览文件，支持基本的压缩加密、分卷等操作。</p><p>截止到本文更新时BandiZip最新版本为6.22</p><p>下载链接：</p><p><a href="https://www.bandisoft.com/bandizip/dl.php?web" target="_blank" rel="noopener">官网下载</a></p><p><a href="https://share.weiyun.com/5b2agJ7" target="_blank" rel="noopener">微云下载</a></p><h3 id="Internet-Download-Manager"><a href="#Internet-Download-Manager" class="headerlink" title="Internet Download Manager"></a>Internet Download Manager</h3><p><img src="https://s2.ax1x.com/2019/05/01/EJTZxf.png" alt="IDM.png"></p><p>下载工具，最高支持32线程下载，支持自动集成到Chrome、Firefox等浏览器中，提供Edge的集成扩展，支持资源嗅探功能。</p><p>截止到本文更新时IDM最新版本为v6.32</p><p>下载链接：</p><p><a href="http://www.internetdownloadmanager.com/download.html" target="_blank" rel="noopener">官网下载</a></p><p>Internet Download Manager为付费软件，所以本小站只提供官网下载</p><h3 id="Pandownload"><a href="#Pandownload" class="headerlink" title="Pandownload"></a>Pandownload</h3><p><img src="https://s2.ax1x.com/2019/05/01/EJTDiR.png" alt="PD.png"></p><p>Pandownload是一款使用aria2c作为内核的百度网盘下载工具，最高支持64线程下载，实测百兆光纤可以跑到10M/s。</p><p>请务必注意，使用此软件可能会导致您的百度网盘账号被拉进小黑屋……</p><p>截止到本文更新时Pandownload最新版本为v2.1.0</p><p>下载链接：</p><p><a href="http://pandownload.com/" target="_blank" rel="noopener">官网下载</a></p><h3 id="DiskGenius"><a href="#DiskGenius" class="headerlink" title="DiskGenius"></a>DiskGenius</h3><p><img src="https://s2.ax1x.com/2019/05/01/EJ7ETJ.png" alt="DG.png"></p><p>DiskGenius是一款磁盘管理工具，支持清除扇区/坏道扫描等高级操作，有一些功能需要付费。</p><p>下载链接：</p><p><a href="https://diskgenius.cn" target="_blank" rel="noopener">官网下载</a></p><hr><p>[完]</p>]]></content>
+      <content type="html"><![CDATA[<p>当你的同学没有锁电脑的时候……</p><a id="more"></a><hr><p>[完]</p>]]></content>
       
       
         <tags>
@@ -38,11 +38,11 @@
       
         <tags>
             
+            <tag> C++ </tag>
+            
             <tag> CodeForces </tag>
             
             <tag> OI </tag>
-            
-            <tag> C++ </tag>
             
         </tags>
       
@@ -70,9 +70,9 @@
       
         <tags>
             
-            <tag> OI </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> OI </tag>
             
         </tags>
       
@@ -106,9 +106,9 @@
       
         <tags>
             
-            <tag> OI </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> OI </tag>
             
         </tags>
       
