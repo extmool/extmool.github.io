@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  Printf与cout的速度比较 |   extmool&#39;s Blog </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header">
+	
+  <nav class="header-inner">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.png">
+      </a>
+    </div>
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+              
+          
+              <a class="header-menu-link" id="header-menu-search">
+                <i class="iconfont icon-search">  
+              </i></a>
+          
+                  
+    </div>  
+    
+  </nav>
+</header>
+
+   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post">
+  
+	
+<div class="post-header">
+	<p class="post-title">	
+		printf与cout的速度比较
+	</p>
+
+	<div class="post-info">	
+		<span class="post-info-entry">
+			6月 29, 2019
+		</span>
+
+		
+		
+			<i class="iconfont icon-words"></i>
+			<span class="post-info-entry">3827
+			</span>
+		
+	</div>
+</div> 
+	
+ 
+
+	  <div class="typo post-content slideDownMin">
+
+		
+
+			
+					<p>一天，extmool来到了qbxt…</p>
+<a id="more"></a>
+<p>这是一个本该欢乐的故事…</p>
+<p>2019年7月13日下午，qbxt的zhx神仙在讲基础数据结构…</p>
+<p>讲到printf与cout的速度比较时，菜鸡extmool有了一些想法…</p>
+<p>printf和cout到底哪一个更快一点呢?</p>
+<p><img src="https://s2.ax1x.com/2019/07/13/Z4CTC8.jpg" alt="Z4CTC8.jpg"></p>
+<p>于是，extmool进行了很多实验……</p>
+<p>注意，以下程序的测试环境为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Dell LATITUDE E7440</span><br><span class="line">System : Windows7 Ultimate x64</span><br><span class="line">CPU    : Intel(R) Core(TM) i5-4300U @1.90GHz, 2.90GHz Max</span><br><span class="line">Memory : 4.00GB DDR3L 1600MHz</span><br><span class="line">Storage: 120GB KingDian S400 SSD ATA Device</span><br><span class="line"></span><br><span class="line">Lenovo G410</span><br><span class="line">System : Windows10 Pro_Workstation Edition x64</span><br><span class="line">CPU    : Intel(R) Core(TM) i5-4200M @2.50GHz, 3.10GHz Max</span><br><span class="line">Memory : 4.00GB DDR3L 1600MHz</span><br><span class="line">Storage: 500GB Seagate HDD 5400rpm</span><br><span class="line"></span><br><span class="line">THTF T45 Pro (感谢LMR同学的资助...</span><br><span class="line">System : Windows10 Pro x64</span><br><span class="line">CPU    : Intel(R) Core(TM) i7-6500U @2.50GHz, 3.10GHz Max</span><br><span class="line">Memory : 16.00GB DDR4 2133MHz</span><br><span class="line">Storage: 1.0TB Hitachi HDD 5400rpm</span><br></pre></td></tr></table></figure>
+<h1 id="标准输出100000个数字-换行"><a href="#标准输出100000个数字-换行" class="headerlink" title="标准输出100000个数字 + 换行"></a>标准输出100000个数字 + 换行</h1><h2 id="标准cout-endl"><a href="#标准cout-endl" class="headerlink" title="标准cout + endl"></a>标准cout + endl</h2><h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h3><p>程序共测试<code>2 * 5 = 10</code>次，最后结果取平均值</p>
+<h4 id="Dell-LATITUDE-E7440-运行结果"><a href="#Dell-LATITUDE-E7440-运行结果" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.53s</td>
+<td>10.09s</td>
+<td>10.45s</td>
+<td>10.12s</td>
+<td>10.21s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>10.28s</code></p>
+<h4 id="Lenovo-G410-运行结果"><a href="#Lenovo-G410-运行结果" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25.14s</td>
+<td>20.12s</td>
+<td>23.49s</td>
+<td>20.91s</td>
+<td>24.11s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>22.754s</code></p>
+<h4 id="THTF-T45-Pro-运行结果"><a href="#THTF-T45-Pro-运行结果" class="headerlink" title="THTF T45 Pro 运行结果"></a>THTF T45 Pro 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>103.1s</td>
+<td>128.5s</td>
+<td>119.3s</td>
+<td>106.1s</td>
+<td>106.7s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>112.74s</code></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>G410!你给Win10PWE丢脸了!(大雾</p>
+<p>还有!LMR你这电脑也就是数据好看点儿了!我不用了!(大雾</p>
+<h2 id="标准cout-‘-n’"><a href="#标准cout-‘-n’" class="headerlink" title="标准cout + ‘\n’"></a>标准cout + ‘\n’</h2><h3 id="程序-1"><a href="#程序-1" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据-1"><a href="#测试数据-1" class="headerlink" title="测试数据"></a>测试数据</h3><h4 id="Dell-LATITUDE-E7440-运行结果-1"><a href="#Dell-LATITUDE-E7440-运行结果-1" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.46s</td>
+<td>10.34s</td>
+<td>10.03s</td>
+<td>10.07s</td>
+<td>10.32s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>10.244s</code></p>
+<h4 id="Lenovo-G410-运行结果-1"><a href="#Lenovo-G410-运行结果-1" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>23.67s</td>
+<td>24.00s</td>
+<td>24.71s</td>
+<td>22.20s</td>
+<td>23.83s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>23.682s</code></p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>G410!你又给Win10PWE丢脸了!(大雾</p>
+<p>从上面的数据可以得出，把<code>endl</code>替换成<code>\n</code>的办法并没有减少多少时间…</p>
+<p>可能是两台测试用的电脑太菜了吧23333</p>
+<h2 id="printf-‘-n’"><a href="#printf-‘-n’" class="headerlink" title="printf + ‘\n’"></a>printf + ‘\n’</h2><h3 id="程序-2"><a href="#程序-2" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据-2"><a href="#测试数据-2" class="headerlink" title="测试数据"></a>测试数据</h3><h4 id="Dell-LATITUDE-E7440-运行结果-2"><a href="#Dell-LATITUDE-E7440-运行结果-2" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19.67s</td>
+<td>19.54s</td>
+<td>19.84s</td>
+<td>20.99s</td>
+<td>19.52s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>19.912s</code></p>
+<h4 id="Lenovo-G410-运行结果-2"><a href="#Lenovo-G410-运行结果-2" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45.45s</td>
+<td>36.42s</td>
+<td>36.28s</td>
+<td>44.81s</td>
+<td>43.65s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>41.322s</code></p>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>G410!你又给Win10PWE丢脸了!</p>
+<p>从数据上来看，用<code>printf</code>好像要比<code>cout</code>慢很多</p>
+<h2 id="关闭同步的-cout-endl"><a href="#关闭同步的-cout-endl" class="headerlink" title="关闭同步的 cout + endl"></a>关闭同步的 cout + endl</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据-3"><a href="#测试数据-3" class="headerlink" title="测试数据"></a>测试数据</h3><h4 id="Dell-LATITUDE-E7440-运行结果-3"><a href="#Dell-LATITUDE-E7440-运行结果-3" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.483s</td>
+<td>4.503s</td>
+<td>4.553s</td>
+<td>4.593s</td>
+<td>4.489s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>4.5242s</code></p>
+<h4 id="Lenovo-G410-运行结果-3"><a href="#Lenovo-G410-运行结果-3" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13.45s</td>
+<td>12.50s</td>
+<td>11.39s</td>
+<td>12.02s</td>
+<td>12.54s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>12.38s</code></p>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>从数据上可以看出，关闭了同步流之后的cout快了很多</p>
+<p>但是这样还有一个缺点</p>
+<p>就是不能用<code>printf</code>和<code>scanf</code>了</p>
+<p>这样的话有一些特殊输入格式的题目可能会自闭</p>
+<h2 id="关闭同步的cout-‘-n’"><a href="#关闭同步的cout-‘-n’" class="headerlink" title="关闭同步的cout + ‘\n’"></a>关闭同步的cout + ‘\n’</h2><h3 id="程序-3"><a href="#程序-3" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据-4"><a href="#测试数据-4" class="headerlink" title="测试数据"></a>测试数据</h3><h4 id="Dell-LATITUDE-E7440-运行结果-4"><a href="#Dell-LATITUDE-E7440-运行结果-4" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.001s</td>
+<td>1.997s</td>
+<td>2.021s</td>
+<td>2.041s</td>
+<td>1.984s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>2.0034s</code></p>
+<h4 id="Lenovo-G410-运行结果-4"><a href="#Lenovo-G410-运行结果-4" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.429s</td>
+<td>1.791s</td>
+<td>1.578s</td>
+<td>1.570s</td>
+<td>1.591s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>1.5918s</code></p>
+<h3 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h3><p>哇G410你终于肯给Win10PWE争光辣!(大雾</p>
+<p>从数据上来看关闭了同步流之后用cout时，<code>&#39;\n&#39;</code>之后又要比<code>endl</code>快一点</p>
+<p>所以如果题目没有特殊的输入格式(如yyyy-mm-dd)时，推荐使用<code>关闭同步流 + cout + &#39;\n&#39;</code></p>
+<h1 id="文件输出100000个数字-换行"><a href="#文件输出100000个数字-换行" class="headerlink" title="文件输出100000个数字 + 换行"></a>文件输出100000个数字 + 换行</h1><h2 id="文件输出cout-endl"><a href="#文件输出cout-endl" class="headerlink" title="文件输出cout + endl"></a>文件输出cout + endl</h2><h3 id="程序-4"><a href="#程序-4" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"Untitled.txt"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据-5"><a href="#测试数据-5" class="headerlink" title="测试数据"></a>测试数据</h3><h4 id="Dell-LATITUDE-E7440-运行结果-5"><a href="#Dell-LATITUDE-E7440-运行结果-5" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.3196s</td>
+<td>0.2875s</td>
+<td>0.2951s</td>
+<td>0.2933s</td>
+<td>0.2907s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>0.29724s</code></p>
+<h4 id="Lenovo-G410-运行结果-5"><a href="#Lenovo-G410-运行结果-5" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.393s</td>
+<td>1.196s</td>
+<td>1.018s</td>
+<td>1.021s</td>
+<td>1.032s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>1.132s</code></p>
+<h3 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h3><p>完犊子，机械硬盘的G410被固态硬盘的E7440暴打了…</p>
+<h2 id="文件输出cout-‘-n’"><a href="#文件输出cout-‘-n’" class="headerlink" title="文件输出cout + ‘\n’"></a>文件输出cout + ‘\n’</h2><h3 id="程序-5"><a href="#程序-5" class="headerlink" title="程序"></a>程序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"Untitled.txt"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试数据-6"><a href="#测试数据-6" class="headerlink" title="测试数据"></a>测试数据</h3><h4 id="Dell-LATITUDE-E7440-运行结果-6"><a href="#Dell-LATITUDE-E7440-运行结果-6" class="headerlink" title="Dell LATITUDE E7440 运行结果"></a>Dell LATITUDE E7440 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.02985s</td>
+<td>0.03212s</td>
+<td>0.03315s</td>
+<td>0.03360s</td>
+<td>0.03088s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>0.032064s</code></p>
+<h4 id="Lenovo-G410-运行结果-6"><a href="#Lenovo-G410-运行结果-6" class="headerlink" title="Lenovo G410 运行结果"></a>Lenovo G410 运行结果</h4><table>
+<thead>
+<tr>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.6695s</td>
+<td>0.4727s</td>
+<td>0.5441s</td>
+<td>0.4138s</td>
+<td>0.4013s</td>
+</tr>
+</tbody>
+</table>
+<p>平均值为 <code>0.50028s</code></p>
+<h3 id="总结-6"><a href="#总结-6" class="headerlink" title="总结"></a>总结</h3><p>文件输入输出时用<code>&#39;\n&#39;</code>大致会快一丝丝(真的就只有那么一丝丝233333)所以这两种可以随便选</p>
+<h1 id="总·总结"><a href="#总·总结" class="headerlink" title="总·总结"></a>总·总结</h1><p>终于写完了可真是累死我了</p>
+<p>[The End.]</p>
+<hr>
+  	
+					
+	  </div>     
+	  
+
+	<div class="post-footer">
+
+
+  <div class="post-footer-other">
+    
+      <span class="post-footer-item">
+        
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="qwq">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="啊咧，图片被吞了">	
+	</div>
+
+	<span class="donate-word">撒个币呗</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+ 
+      </span>        
+       
+    
+      <span class="post-footer-item">
+        <span class="share-btn">
+	<span class="iconfont icon-share"></span>
+</span>
+<div class="-mob-share sildeUpMin">
+	<ul class="-mob-inner">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-douban 
+		-mob-share-douban 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-facebook 
+		-mob-share-facebook 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-twitter 
+		-mob-share-twitter 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-google 
+		-mob-share-google 
+		-mob-share-link"></li>		
+   	   
+	</ul>
+</div>	
+
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      </span>  
+               
+  </div>  
+    
+
+
+  <div class="post-footer-meta">
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/OI/">OI</a> <a class="tag-link" href="/tags/灌水/">灌水</a>    
+        	
+  </div>
+
+</div>
+
+
+<nav class="post-footer-nav">
+  <div class="post-footer-link">
+  
+      <a href="/posts/如何正确地机惨-Linux指令篇/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">上一篇</strong>
+        
+          <a class="post-nav-title" href="/posts/如何正确地机惨-Linux指令篇/">
+          如何正确地机惨-Linux指令篇</a>
+      </a>
+  
+  </div>
+  <div class="post-footer-link">
+    
+        <a href="/posts/联发科MT67XX处理器ROM移植教程/" id="post-nav-newer" class="post-nav-link-wrap">
+          <strong class="post-nav-caption">下一篇</strong>
+             
+            <a class="post-nav-title" href="/posts/联发科MT67XX处理器ROM移植教程/">
+            联发科MT67XX处理器ROM移植教程</a>
+        </a>
+    
+  </div>
+
+</nav>
+ 
+	
+
+
+    <div id="comment">   
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	
+
+    <script>
+        new Valine({
+        el: '#comment',
+        notify:false, 
+        verify:false, 
+        app_id: 'R6d9JSRR1wLv0l8x3DJi0o1E-gzGzoHsz',
+        app_key: 'Ih7E1fJWFHbV91kUCaUJY6Ye',  
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        guest_info:['nick','mail']
+        });
+    </script>
+	
+</article>
+
+          </div> 
+      </div>            
+    
+    <a id="page-backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+    <div class="search-container sildeUpMin">
+        <div class="search-header">
+            <input type="text" placeholder="把你想搜的丢过来" id="search-input" class="search-input">
+            <span class="search-cancel">
+                <i class="iconfont icon-cancel">
+            </i></span>
+        </div>
+        <div id="search-result" class="search-result"></div>
+    </div>
+ 
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2019		
+	
+		extmool
+		<br>
+
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>			
+	 
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-ruyue"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>        
+</html>
