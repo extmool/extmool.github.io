@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  
+  <title>  如何正确地机惨-Anderoid篇 |   extmool&#39;s Blog </title>
+
+ 
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+
+  <link rel="stylesheet" href="/nayo.min.css"> 
+</head>  
+  <body>   
+    
+      <header class="header">
+	
+  <nav class="header-inner">        
+
+    <span class="iconfont icon-menu mobile-toggle"></span>   	
+
+    <div class="header-logo">
+      <a href="/">
+        <img class="header-logo-img" src="/images/logo.png">
+      </a>
+    </div>
+
+    <div class="header-menu">          
+              
+          
+            <a class="header-menu-link" id="header-menu-home" href="/">
+              <i class="iconfont icon-home">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-archives" href="/archives">
+              <i class="iconfont icon-archives">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-tags" href="/tags">
+              <i class="iconfont icon-tags">  
+            </i></a>     
+          
+              
+          
+            <a class="header-menu-link" id="header-menu-about" href="/about">
+              <i class="iconfont icon-about">  
+            </i></a>     
+          
+              
+          
+              <a class="header-menu-link" id="header-menu-search">
+                <i class="iconfont icon-search">  
+              </i></a>
+          
+                  
+    </div>  
+    
+  </nav>
+</header>
+
+   
+
+      <div class="container">       
+          
+          
+            <div class="container-inner">  
+          
+
+          <article class="post">
+  
+	
+<div class="post-header">
+	<p class="post-title">	
+		如何正确地机惨-Anderoid篇
+	</p>
+
+	<div class="post-info">	
+		<span class="post-info-entry">
+			7月 16, 2019
+		</span>
+
+		
+		
+			<i class="iconfont icon-words"></i>
+			<span class="post-info-entry">1489
+			</span>
+		
+	</div>
+</div> 
+	
+ 
+
+	  <div class="typo post-content slideDownMin">
+
+		
+
+			
+					<p>当你的同学把手机借给你的时候……</p>
+<a id="more"></a>
+<p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p>
+<p>以下命令均在 三星Samsung Experience (Based on Android 6.0) 测试通过，其他系统请自测。</p>
+<h2 id="对于已root的设备"><a href="#对于已root的设备" class="headerlink" title="对于已root的设备"></a>对于已root的设备</h2><h3 id="格式化根目录"><a href="#格式化根目录" class="headerlink" title="格式化根目录"></a>格式化根目录</h3><p>请点击以下链接中的任意一个下载终端：</p>
+<p><a href="https://www.coolapk.com/apk/com.termux" target="_blank" rel="noopener">[Termux高级终端]</a></p>
+<p><a href="https://www.coolapk.com/apk/com.romide.terminal" target="_blank" rel="noopener">[Ansole终端]</a></p>
+<p><a href="https://www.coolapk.com/apk/io.neoterm" target="_blank" rel="noopener">[NeoTerm]</a></p>
+<p>安装完成后，打开终端，在终端中逐行输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">sudo rm -rf / --no-preserve-root</span><br></pre></td></tr></table></figure>
+<p>如果在执行<code>su</code>的过程中出现<code>输入密码</code>之类的提示，那就放弃机惨吧，做一个善人</p>
+<h2 id="对于未root但能使用ADB的设备"><a href="#对于未root但能使用ADB的设备" class="headerlink" title="对于未root但能使用ADB的设备"></a>对于未root但能使用ADB的设备</h2><p>注意，以下命令需要打开开发者模式中的ADB选项!</p>
+<h3 id="把DPI调小"><a href="#把DPI调小" class="headerlink" title="把DPI调小"></a>把DPI调小</h3><p>此操作需要电脑支持</p>
+<p>请点击下面的链接下载来自<code>咕鸽</code>的<code>Platform_Tools</code>工具包</p>
+<p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">[platform-tools-latest-windows.zip]</a></p>
+<p>下载完成后，解压，将压缩包内所有文件拷贝到<code>C:/Windows/System32/</code>文件夹中</p>
+<p>打开<code>cmd</code>，输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
+<p>如果没有正常显示出了类似与<code>xxxxxxxx device</code>的提示，请检查与手机的连接是否正常</p>
+<p>接着输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density 100</span><br></pre></td></tr></table></figure>
+<p>如果显示了类似于<code>&lt;Waiting For Device&gt;</code>的提示，请检查与手机的连接是否正常</p>
+<p>这段命令中的<code>100</code>这个数值是可以变化的，具体可以按您的需求更改（大雾</p>
+<h3 id="卸载settings-apk"><a href="#卸载settings-apk" class="headerlink" title="卸载settings.apk"></a>卸载settings.apk</h3><p>注意，这个操作我并没有尝试，请自行尝试</p>
+<p>此操作需要电脑支持</p>
+<p>请点击下面的链接下载来自<code>咕鸽</code>的<code>Platform_Tools</code>工具包</p>
+<p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">[platform-tools-latest-windows.zip]</a></p>
+<p>下载完成后，解压，将压缩包内所有文件拷贝到<code>C:/Windows/System32/</code>文件夹中</p>
+<p>打开<code>cmd</code>，输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
+<p>如果没有正常显示出了类似与<code>xxxxxxxx device</code>的提示，请检查与手机的连接是否正常</p>
+<p>接着输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com.android.settings</span><br></pre></td></tr></table></figure>
+<p>如果显示了类似于<code>&lt;Waiting For Device&gt;</code>的提示，请检查与手机的连接是否正常</p>
+<h2 id="对于未root但能重启到Fastboot的设备"><a href="#对于未root但能重启到Fastboot的设备" class="headerlink" title="对于未root但能重启到Fastboot的设备"></a>对于未root但能重启到Fastboot的设备</h2><h3 id="清除四大分区"><a href="#清除四大分区" class="headerlink" title="清除四大分区"></a>清除四大分区</h3><p>此操作需要电脑支持</p>
+<p>首先把手机重启到Fastboot模式，具体的操作视情况而定</p>
+<p>请点击下面的链接下载来自<code>咕鸽</code>的<code>Platform_Tools</code>工具包</p>
+<p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">[platform-tools-latest-windows.zip]</a></p>
+<p>下载完成后，解压，将压缩包内所有文件拷贝到<code>C:/Windows/System32/</code>文件夹中</p>
+<p>打开<code>cmd</code>，输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot devices</span><br></pre></td></tr></table></figure>
+<p>如果没有出现类似于<code>xxxxxxxx fastboot</code>的提示，请检查与手机的连接是否正常</p>
+<p>接着输入以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot erase system -w</span><br></pre></td></tr></table></figure>
+<p>如果出现了类似于<code>&lt;Waiting For Device&gt;</code>的提示，请检查与手机的连接是否正常</p>
+<p>这个命令会清除四个分区，即<code>System</code>(系统)，<code>Data</code>(软件&amp;大部分软件数据)，<code>Dalvik/ART Cache</code>(图像处理缓存)和<code>Cache</code>四个分区</p>
+<p>慎用此命令，可能会死得很惨（大雾</p>
+<h2 id="对于未root以及不能进行上面操作的设备"><a href="#对于未root以及不能进行上面操作的设备" class="headerlink" title="对于未root以及不能进行上面操作的设备"></a>对于未root以及不能进行上面操作的设备</h2><h3 id="物理机惨"><a href="#物理机惨" class="headerlink" title="物理机惨"></a>物理机惨</h3><p>没办法嘛，直接用万能修复工具就行了</p>
+<p>这里给一个卖万能修复工具的店铺，老板人又好，说话又好听，我超级喜欢在他那里买修复工具:</p>
+<p><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.8.1e496ee3XAVJtx&amp;id=569445065244&amp;cm_id=140105335569ed55e27b&amp;abbucket=2" target="_blank" rel="noopener">[点我进入]</a></p>
+<hr>
+<p>[完]</p>
+  	
+					
+	  </div>     
+	  
+
+	<div class="post-footer">
+
+
+  <div class="post-footer-other">
+    
+      <span class="post-footer-item">
+        
+
+
+<span class="donate-btn">
+	<span class="iconfont icon-donate"></span>
+</span>
+
+<div id="donate-box" class="sildeUpMin">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="qwq">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="啊咧，图片被吞了">	
+	</div>
+
+	<span class="donate-word">撒个币呗</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+ 
+      </span>        
+       
+    
+      <span class="post-footer-item">
+        <span class="share-btn">
+	<span class="iconfont icon-share"></span>
+</span>
+<div class="-mob-share sildeUpMin">
+	<ul class="-mob-inner">
+	   			             
+        <li class="iconfont 
+		icon-share-qq 
+		-mob-share-qq 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weixin 
+		-mob-share-weixin 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-weibo 
+		-mob-share-weibo 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-douban 
+		-mob-share-douban 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-facebook 
+		-mob-share-facebook 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-twitter 
+		-mob-share-twitter 
+		-mob-share-link"></li>		
+   	   			             
+        <li class="iconfont 
+		icon-share-google 
+		-mob-share-google 
+		-mob-share-link"></li>		
+   	   
+	</ul>
+</div>	
+
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+      </span>  
+               
+  </div>  
+    
+
+
+  <div class="post-footer-meta">
+        	
+
+        
+          <i class="iconfont icon-tag"></i>     
+            <a class="tag-link" href="/tags/机惨/">机惨</a> <a class="tag-link" href="/tags/灌水/">灌水</a>    
+        	
+  </div>
+
+</div>
+
+
+<nav class="post-footer-nav">
+  <div class="post-footer-link">
+  
+      <a href="/posts/printf与cout的速度比较/" id="post-nav-older" class="post-nav-link-wrap">
+        <strong class="post-nav-caption">上一篇</strong>
+        
+          <a class="post-nav-title" href="/posts/printf与cout的速度比较/">
+          printf与cout的速度比较</a>
+      </a>
+  
+  </div>
+  <div class="post-footer-link">
+    
+  </div>
+
+</nav>
+ 
+	
+
+
+    <div id="comment">   
+    </div>
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	
+
+    <script>
+        new Valine({
+        el: '#comment',
+        notify:false, 
+        verify:false, 
+        app_id: 'R6d9JSRR1wLv0l8x3DJi0o1E-gzGzoHsz',
+        app_key: 'Ih7E1fJWFHbV91kUCaUJY6Ye',  
+        path:window.location.pathname, 
+        avatar:'mm' ,
+        guest_info:['nick','mail']
+        });
+    </script>
+	
+</article>
+
+          </div> 
+      </div>            
+    
+    <a id="page-backTop">
+      <span>
+        <i class="iconfont icon-backtotop"></i>
+      </span>
+    </a> 
+
+  
+    
+    <div class="search-container sildeUpMin">
+        <div class="search-header">
+            <input type="text" placeholder="把你想搜的丢过来" id="search-input" class="search-input">
+            <span class="search-cancel">
+                <i class="iconfont icon-cancel">
+            </i></span>
+        </div>
+        <div id="search-result" class="search-result"></div>
+    </div>
+ 
+     <div class="mobile-menu">      
+
+      
+      <img class="mobile-menu-icon" src="/images/favicon.png">  
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            
+         
+      
+</div>
+        
+    
+
+
+
+     
+    
+
+
+
+
+<footer id="footer">	    
+
+		
+		<div class="footer-copyright">
+		&copy;
+		
+		2019		
+	
+		extmool
+		<br>
+
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
+		</div>			
+	 
+</footer>   
+
+    <script src="/nayo.bundle.js"></script>           
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-ruyue"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>        
+</html>
