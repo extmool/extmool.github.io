@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title>如何正确地机惨-Anderoid篇</title>
+      <title>如何正确地机惨-Android篇</title>
       <link href="//posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-Android%E7%AF%87/"/>
       <content type="html"><![CDATA[<p>当你的同学把手机借给你的时候……</p><a id="more"></a><p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p><p>以下命令均在 三星Samsung Experience (Based on Android 6.0) 测试通过，其他系统请自测。</p><h2 id="对于已root的设备"><a href="#对于已root的设备" class="headerlink" title="对于已root的设备"></a>对于已root的设备</h2><h3 id="格式化根目录"><a href="#格式化根目录" class="headerlink" title="格式化根目录"></a>格式化根目录</h3><p>请点击以下链接中的任意一个下载终端：</p><p><a href="https://www.coolapk.com/apk/com.termux" target="_blank" rel="noopener">[Termux高级终端]</a></p><p><a href="https://www.coolapk.com/apk/com.romide.terminal" target="_blank" rel="noopener">[Ansole终端]</a></p><p><a href="https://www.coolapk.com/apk/io.neoterm" target="_blank" rel="noopener">[NeoTerm]</a></p><p>安装完成后，打开终端，在终端中逐行输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">sudo rm -rf / --no-preserve-root</span><br></pre></td></tr></table></figure><p>如果在执行<code>su</code>的过程中出现<code>输入密码</code>之类的提示，那就放弃机惨吧，做一个善人</p><h2 id="对于未root但能使用ADB的设备"><a href="#对于未root但能使用ADB的设备" class="headerlink" title="对于未root但能使用ADB的设备"></a>对于未root但能使用ADB的设备</h2><p>注意，以下命令需要打开开发者模式中的ADB选项!</p><h3 id="把DPI调小"><a href="#把DPI调小" class="headerlink" title="把DPI调小"></a>把DPI调小</h3><p>此操作需要电脑支持</p><p>请点击下面的链接下载来自<code>咕鸽</code>的<code>Platform_Tools</code>工具包</p><p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">[platform-tools-latest-windows.zip]</a></p><p>下载完成后，解压，将压缩包内所有文件拷贝到<code>C:/Windows/System32/</code>文件夹中</p><p>打开<code>cmd</code>，输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure><p>如果没有正常显示出了类似与<code>xxxxxxxx device</code>的提示，请检查与手机的连接是否正常</p><p>接着输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density 100</span><br></pre></td></tr></table></figure><p>如果显示了类似于<code>&lt;Waiting For Device&gt;</code>的提示，请检查与手机的连接是否正常</p><p>这段命令中的<code>100</code>这个数值是可以变化的，具体可以按您的需求更改（大雾</p><h3 id="卸载settings-apk"><a href="#卸载settings-apk" class="headerlink" title="卸载settings.apk"></a>卸载settings.apk</h3><p>注意，这个操作我并没有尝试，请自行尝试</p><p>此操作需要电脑支持</p><p>请点击下面的链接下载来自<code>咕鸽</code>的<code>Platform_Tools</code>工具包</p><p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">[platform-tools-latest-windows.zip]</a></p><p>下载完成后，解压，将压缩包内所有文件拷贝到<code>C:/Windows/System32/</code>文件夹中</p><p>打开<code>cmd</code>，输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure><p>如果没有正常显示出了类似与<code>xxxxxxxx device</code>的提示，请检查与手机的连接是否正常</p><p>接着输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com.android.settings</span><br></pre></td></tr></table></figure><p>如果显示了类似于<code>&lt;Waiting For Device&gt;</code>的提示，请检查与手机的连接是否正常</p><h2 id="对于未root但能重启到Fastboot的设备"><a href="#对于未root但能重启到Fastboot的设备" class="headerlink" title="对于未root但能重启到Fastboot的设备"></a>对于未root但能重启到Fastboot的设备</h2><h3 id="清除四大分区"><a href="#清除四大分区" class="headerlink" title="清除四大分区"></a>清除四大分区</h3><p>此操作需要电脑支持</p><p>首先把手机重启到Fastboot模式，具体的操作视情况而定</p><p>请点击下面的链接下载来自<code>咕鸽</code>的<code>Platform_Tools</code>工具包</p><p><a href="https://dl.google.com/android/repository/platform-tools-latest-windows.zip" target="_blank" rel="noopener">[platform-tools-latest-windows.zip]</a></p><p>下载完成后，解压，将压缩包内所有文件拷贝到<code>C:/Windows/System32/</code>文件夹中</p><p>打开<code>cmd</code>，输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot devices</span><br></pre></td></tr></table></figure><p>如果没有出现类似于<code>xxxxxxxx fastboot</code>的提示，请检查与手机的连接是否正常</p><p>接着输入以下命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot erase system -w</span><br></pre></td></tr></table></figure><p>如果出现了类似于<code>&lt;Waiting For Device&gt;</code>的提示，请检查与手机的连接是否正常</p><p>这个命令会清除四个分区，即<code>System</code>(系统)，<code>Data</code>(软件&amp;大部分软件数据)，<code>Dalvik/ART Cache</code>(图像处理缓存)和<code>Cache</code>四个分区</p><p>慎用此命令，可能会死得很惨（大雾</p><h2 id="对于未root以及不能进行上面操作的设备"><a href="#对于未root以及不能进行上面操作的设备" class="headerlink" title="对于未root以及不能进行上面操作的设备"></a>对于未root以及不能进行上面操作的设备</h2><h3 id="物理机惨"><a href="#物理机惨" class="headerlink" title="物理机惨"></a>物理机惨</h3><p>没办法嘛，直接用万能修复工具就行了</p><p>这里给一个卖万能修复工具的店铺，老板人又好，说话又好听，我超级喜欢在他那里买修复工具:</p><p><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.8.1e496ee3XAVJtx&amp;id=569445065244&amp;cm_id=140105335569ed55e27b&amp;abbucket=2" target="_blank" rel="noopener">[点我进入]</a></p><hr><p>[完]</p>]]></content>
       
@@ -26,9 +26,9 @@
       
         <tags>
             
-            <tag> 灌水 </tag>
-            
             <tag> OI </tag>
+            
+            <tag> 灌水 </tag>
             
         </tags>
       
@@ -118,11 +118,11 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> CodeForces </tag>
             
             <tag> OI </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
@@ -136,9 +136,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> OI </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
@@ -158,9 +158,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> OI </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
