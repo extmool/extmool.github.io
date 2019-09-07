@@ -5,7 +5,7 @@
     <entry>
       <title>如何正确地机惨-macOS篇</title>
       <link href="//posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-macOS%E7%AF%87/"/>
-      <content type="html"><![CDATA[<p>当你身边的同学忘了锁他价值万元的MBP就出去玩时……</p><a id="more"></a><p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p><p>由于某水果牌笔记本/工作站/一体机一般比较昂贵，所以请在JC时务必小心行事</p><hr><p>[完]</p>]]></content>
+      <content type="html"><![CDATA[<p>当你身边的同学忘了锁他价值万元的MBP就出去玩时……</p><a id="more"></a><p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p><p>由于某水果牌笔记本/工作站/一体机/主机一般比较昂贵，所以请在JC时务必小心行事</p><p>万一被打死了呢[雾]</p><p>首先我们需要知道，果子的macOS与Linux都是基于UNIX的，也就是说，Linux能用的命令大多数也适用于macOS</p><p>所以，打开以下链接，继续探索属于你的世界吧[雾</p><p><a href="https://extmool.github.io/posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-Linux%E6%8C%87%E4%BB%A4%E7%AF%87/">如何正确地机惨-Linux指令篇 By extmool</a></p><hr><p>[完]</p>]]></content>
       
       
         <tags>
@@ -42,9 +42,9 @@
       
         <tags>
             
-            <tag> 灌水 </tag>
-            
             <tag> OI </tag>
+            
+            <tag> 灌水 </tag>
             
         </tags>
       
@@ -134,11 +134,11 @@
       
         <tags>
             
+            <tag> CodeForces </tag>
+            
             <tag> OI </tag>
             
             <tag> C++ </tag>
-            
-            <tag> CodeForces </tag>
             
         </tags>
       
