@@ -5,7 +5,7 @@
     <entry>
       <title>正睿2019普及组五联测踩坑记录</title>
       <link href="//posts/%E6%AD%A3%E7%9D%BF2019%E6%99%AE%E5%8F%8A%E7%BB%84%E4%BA%94%E8%81%94%E6%B5%8B%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
-      <content type="html"><![CDATA[<p>正睿OI，一个神奇的地方</p><a id="more"></a><h3 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h3><table><thead><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>总分</th><th>Rank</th></tr></thead><tbody><tr><td>50pts</td><td>0pts</td><td>20pts</td><td>0pts</td><td>70pts</td><td>145</td></tr></tbody></table><h4 id="Problem-A"><a href="#Problem-A" class="headerlink" title="Problem A"></a>Problem A</h4><p><a href="https://imgchr.com/i/nyZk6I" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/14/nyZk6I.png" alt="nyZk6I.png"></a></p><p>上来先看了一眼题面，感觉还是蛮简单的</p><p>5min打了个程序，交上去了，样例也是对的，就没管这么多写别的题去了</p><p>后来才发现忘了开<code>long long</code></p><p><img src="https://s2.ax1x.com/2019/09/14/nyVTkF.png" alt="nyVTkF.png"></p><p><img src="http://ww1.sinaimg.cn/large/9150e4e5ly1fql7zpez43j204a030742.jpg" alt></p><p><a href="https://imgchr.com/i/nyVx0K" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/14/nyVx0K.png" alt="nyVx0K.png"></a></p><p>附AC程序</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, a[<span class="number">100001</span>], ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">ans += a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <content type="html"><![CDATA[<p>正睿OI，一个神奇的地方</p><a id="more"></a><h3 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h3><table><thead><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>总分</th><th>Rank</th></tr></thead><tbody><tr><td>50pts</td><td>0pts</td><td>20pts</td><td>0pts</td><td>70pts</td><td>145</td></tr></tbody></table><h4 id="Problem-A"><a href="#Problem-A" class="headerlink" title="Problem A"></a>Problem A</h4><p>上来先看了一眼题面，感觉还是蛮简单的</p><p>5min打了个程序，交上去了，样例也是对的，就没管这么多写别的题去了</p><p>后来才发现忘了开<code>long long</code></p><p><img src="https://s2.ax1x.com/2019/09/14/nyVTkF.png" alt="nyVTkF.png"></p><p><img src="http://ww1.sinaimg.cn/large/9150e4e5ly1fql7zpez43j204a030742.jpg" alt></p><p>附AC程序</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, a[<span class="number">100001</span>], ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">ans += a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>[未完待续]</p>]]></content>
       
       
         <tags>
@@ -58,9 +58,9 @@
       
         <tags>
             
-            <tag> OI </tag>
-            
             <tag> 灌水 </tag>
+            
+            <tag> OI </tag>
             
         </tags>
       
@@ -134,11 +134,11 @@
       
         <tags>
             
-            <tag> CodeForces </tag>
+            <tag> C++ </tag>
             
             <tag> OI </tag>
             
-            <tag> C++ </tag>
+            <tag> CodeForces </tag>
             
         </tags>
       
@@ -152,9 +152,9 @@
       
         <tags>
             
-            <tag> OI </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> OI </tag>
             
         </tags>
       
@@ -174,9 +174,9 @@
       
         <tags>
             
-            <tag> OI </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> OI </tag>
             
         </tags>
       
