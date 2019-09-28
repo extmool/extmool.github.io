@@ -90,7 +90,7 @@
 		
 		
 			<i class="iconfont icon-words"></i>
-			<span class="post-info-entry">490
+			<span class="post-info-entry">1394
 			</span>
 		
 	</div>
@@ -140,6 +140,37 @@
 <p><img src="http://ww1.sinaimg.cn/large/9150e4e5ly1fql7zpez43j204a030742.jpg" alt></p>
 <p>附AC程序</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, a[<span class="number">100001</span>], ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">		ans += a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h3><p>学校里放学了就赶紧到了YZ，不过还是晚了2min</p>
+<p><code>Rating没了.jpg</code></p>
+<p>截至本文更新(2019.9.20 20:45)成绩还没出。</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>总分</th>
+<th>Rank</th>
+<th>Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Problem-B"><a href="#Problem-B" class="headerlink" title="Problem B"></a>Problem B</h4><p><a href="https://imgchr.com/i/nve7AH" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/20/nve7AH.png" alt="nve7AH.png"></a></p>
+<p>[以下为在考场上写下的程序]</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line">ll t, a, b, c, x, y, z; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; i++)&#123;</span><br><span class="line">    	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">    	<span class="keyword">if</span> (a * <span class="built_in">pow</span>(<span class="number">10</span>, <span class="number">0</span>) + b * <span class="built_in">pow</span>(<span class="number">10</span>, <span class="number">0</span>) == c * <span class="built_in">pow</span>(<span class="number">10</span>, <span class="number">0</span>))&#123;</span><br><span class="line">    		<span class="built_in">cout</span> &lt;&lt; <span class="string">"0 0 0"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (a == b &amp;&amp; b == c &amp;&amp; c == a)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">    	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">21</span>; j++)&#123;</span><br><span class="line">    		<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">21</span>; k++)&#123;</span><br><span class="line">    			<span class="keyword">for</span> (<span class="keyword">int</span> m = <span class="number">0</span>; m &lt; <span class="number">21</span>; m++)&#123;</span><br><span class="line">    				<span class="keyword">if</span> (a * (<span class="built_in">pow</span>(<span class="number">10</span>, j)) + b * (<span class="built_in">pow</span>(<span class="number">10</span>, k)) == c * (<span class="built_in">pow</span>(<span class="number">10</span>, m)))&#123;</span><br><span class="line">    					<span class="built_in">cout</span> &lt;&lt; j &lt;&lt; <span class="string">' '</span> &lt;&lt; k &lt;&lt; <span class="string">' '</span> &lt;&lt; m &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    					<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>星8，我就看这程序能TLE几个</p>
 <p>[未完待续]</p>
   	
 					
@@ -165,7 +196,7 @@
 
 	<div class="donate-img-box">
 		<img id="donate-qr-wechat" class="noLazyLoad donate-img" src="/images/donate.png" alt="qwq">	
-		<img id="donate-qr-alipay" class="noLazyLoad donate-img" src="/" alt="啊咧，图片被吞了">	
+		<img id="donate-qr-alipay" class="noLazyLoad donate-img lazyload" src="/images/placeholder.png" alt="啊咧，图片被吞了" data-src="/">	
 	</div>
 
 	<span class="donate-word">撒个币呗</span>

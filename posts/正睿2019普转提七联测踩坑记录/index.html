@@ -90,7 +90,7 @@
 		
 		
 			<i class="iconfont icon-words"></i>
-			<span class="post-info-entry">575
+			<span class="post-info-entry">1439
 			</span>
 		
 	</div>
@@ -130,7 +130,15 @@
 </tbody>
 </table>
 <p><code>Rating没了.jpg</code></p>
-<p>不予置评（大雾弥漫</p>
+<p><del>不予置评（大雾弥漫</del></p>
+<h4 id="Problem-A"><a href="#Problem-A" class="headerlink" title="Problem A"></a>Problem A</h4><p><a href="https://imgchr.com/i/nxyGjI" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/21/nxyGjI.png" alt="nxyGjI.png"></a></p>
+<p>思路错了（大雾弥漫</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, a[<span class="number">1001</span>], t;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    	<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a, a + n);</span><br><span class="line">	t = unique(a, a + n) - a;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; n - t;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>眼瞎没看到”连续字串”几个字，就用STL去了一遍重，输出</p>
+<p>一分也没有拿到（大雾弥漫</p>
+<h4 id="Problem-B"><a href="#Problem-B" class="headerlink" title="Problem B"></a>Problem B</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, S, in[<span class="number">1001</span>], out[<span class="number">1001</span>], w[<span class="number">1001</span>], s[<span class="number">1001</span>], v[<span class="number">1000001</span>], ans, logw, logv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; S;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    	<span class="built_in">cin</span> &gt;&gt; in[i] &gt;&gt; out[i] &gt;&gt; w[i] &gt;&gt; s[i] &gt;&gt; v[i];</span><br><span class="line">    	<span class="keyword">if</span> (logw + w[i] &lt;= S &amp;&amp; !(w[i] &gt; s[i - <span class="number">1</span>]))&#123;</span><br><span class="line">    		ans += v[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (logw + w[i] &gt; S || w[i] &gt; s[i - <span class="number">1</span>])&#123;</span><br><span class="line">			<span class="keyword">if</span> (ans - v[i - <span class="number">1</span>] + v[i] &gt; ans)&#123;</span><br><span class="line">				ans -= v[i - <span class="number">1</span>];</span><br><span class="line">				ans += v[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>20pts，绝了（大雾弥漫</p>
+<p>我现在看到这我都不知道我是怎么写的了（</p>
 <h3 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h3><table>
 <thead>
 <tr>
@@ -155,19 +163,19 @@
 </tr>
 </tbody>
 </table>
-<h4 id="Problem-A"><a href="#Problem-A" class="headerlink" title="Problem A"></a>Problem A</h4><p><a href="https://imgchr.com/i/nhPQfS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/16/nhPQfS.png" alt="nhPQfS.png"></a></p>
+<h4 id="Problem-A-1"><a href="#Problem-A-1" class="headerlink" title="Problem A"></a>Problem A</h4><p><a href="https://imgchr.com/i/nhPQfS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/16/nhPQfS.png" alt="nhPQfS.png"></a></p>
 <p>上来先看了一眼题面，感觉挺简单的（错觉</p>
 <p>利用自己找的规律打了个表，规模自己体会（大雾弥漫</p>
 <p>后来好像发现表也打错了，前导<code>0</code>应该也要包括进去（大雾弥漫</p>
 <p><a href="https://imgchr.com/i/nhpGO1" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/16/nhpGO1.png" alt="nhpGO1.png"></a></p>
 <p><a href="https://imgchr.com/i/nhpzc9" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/16/nhpzc9.png" alt="nhpzc9.png"></a></p>
 <p>如果还不能清楚地了解代码规模，请看这个。</p>
-<p><a href="https://imgchr.com/i/nhCXQJ" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/09/16/nhCXQJ.png" alt="nhCXQJ.png"></a></p>
+<p><a href="https://imgchr.com/i/nhCXQJ" target="_blank" rel="noopener"><img src="/images/placeholder.png" alt="nhCXQJ.png" data-src="https://s2.ax1x.com/2019/09/16/nhCXQJ.png" class="lazyload"></a></p>
 <p>（我真搞不懂我哪来的闲心打这么大的表</p>
 <p>（大雾弥漫</p>
 <p><a href="https://imgchr.com/i/nhPWtK" target="_blank" rel="noopener"><img src="/images/placeholder.png" alt="nhPWtK.png" data-src="https://s2.ax1x.com/2019/09/16/nhPWtK.png" class="lazyload"></a></p>
 <p>（我可能是全LYOI第一个打表<code>TLE</code>的人（雾</p>
-<h4 id="Problem-B"><a href="#Problem-B" class="headerlink" title="Problem B"></a>Problem B</h4><p><a href="https://imgchr.com/i/nhPx1g" target="_blank" rel="noopener"><img src="/images/placeholder.png" alt="nhPx1g.png" data-src="https://s2.ax1x.com/2019/09/16/nhPx1g.png" class="lazyload"></a></p>
+<h4 id="Problem-B-1"><a href="#Problem-B-1" class="headerlink" title="Problem B"></a>Problem B</h4><p><a href="https://imgchr.com/i/nhPx1g" target="_blank" rel="noopener"><img src="/images/placeholder.png" alt="nhPx1g.png" data-src="https://s2.ax1x.com/2019/09/16/nhPx1g.png" class="lazyload"></a></p>
 <p>稍微看了一下题面之后，就想到了一个玄学的方法</p>
 <p>（而且似乎不用专门判断是否为空串</p>
 <p>先把这个字符串里面的所有字串存好，再一个个判断里面 <code>A</code> <code>B</code> <code>C</code> 的数量是否相等</p>
