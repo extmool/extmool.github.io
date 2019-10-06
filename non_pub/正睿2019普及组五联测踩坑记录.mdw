@@ -1,0 +1,121 @@
+﻿---
+title: 正睿2019普及组五联测踩坑记录
+date: 2019-09-14 11:31:10
+tags:
+- OI
+- 正睿OI
+---
+
+正睿OI，一个神奇的地方
+
+<!--more-->
+
+### Day 1
+
+`Rating没了.jpg`
+
+A | B | C | D | 总分 | Rank | Rating
+---|----|---|----|---|---|---
+50pts|0pts|20pts|0pts|70pts|145|-82
+
+#### Problem A
+
+
+
+上来先看了一眼题面，感觉还是蛮简单的
+
+5min打了个程序，交上去了，样例也是对的，就没管这么多写别的题去了
+
+后来才发现忘了开`long long`，而且思路好像也有问题
+
+既然要取 `+` 和 `^` 的最大值，直接加起来就行啊
+
+为啥我还要铁憨憨去用 `max(ans ^ a[i], ans + a[i]);`
+
+（大雾弥漫
+
+![nyVTkF.png](https://s2.ax1x.com/2019/09/14/nyVTkF.png)
+
+![](http://ww1.sinaimg.cn/large/9150e4e5ly1fql7zpez43j204a030742.jpg)
+
+
+附AC程序
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long n, a[100001], ans;
+
+int main(){
+	cin >> n;
+	for (long long i = 0; i < n; i++){
+		cin >> a[i];
+		ans += a[i];
+	}
+	cout << ans;
+    return 0;
+}
+
+```
+
+### Day 2
+
+学校里放学了就赶紧到了YZ，不过还是晚了2min
+
+`Rating没了.jpg`
+
+截至本文更新(2019.9.20 20:45)成绩还没出。
+
+A | B | C | D | 总分 | Rank | Rating
+---|----|---|----|---|---|---
+N/A|N/A|N/A|N/A|N/A|N/A|N/A
+
+#### Problem B
+
+[![nve7AH.png](https://s2.ax1x.com/2019/09/20/nve7AH.png)](https://imgchr.com/i/nve7AH)
+
+[以下为在考场上写下的程序]
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define ll long long
+
+ll t, a, b, c, x, y, z; 
+
+int main(){
+	cin.tie(0);cout.tie(0);
+    cin >> t;
+    for (int i = 0; i < t; i++){
+    	cin >> a >> b >> c;
+    	if (a * pow(10, 0) + b * pow(10, 0) == c * pow(10, 0)){
+    		cout << "0 0 0" << endl; 
+    		continue;
+		}
+		if (a == b && b == c && c == a){
+			cout << -1 << endl;
+		}
+    	for (int j = 0; j < 21; j++){
+    		for (int k = 0; k < 21; k++){
+    			for (int m = 0; m < 21; m++){
+    				if (a * (pow(10, j)) + b * (pow(10, k)) == c * (pow(10, m))){
+    					cout << j << ' ' << k << ' ' << m << endl;
+    					break;
+					}
+					break;
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+```
+
+星8，我就看这程序能TLE几个
+
+[未完待续]

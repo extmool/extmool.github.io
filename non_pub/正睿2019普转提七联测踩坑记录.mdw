@@ -1,0 +1,154 @@
+---
+title: 正睿2019普转提七联测踩坑记录
+date: 2019-09-16 21:46:12
+tags:
+- OI
+- 正睿OI
+---
+
+正睿OI，一个神奇的地方。
+
+<!--more-->
+
+### Day 1
+
+A | B | C | D | 总分 | Rank | Rating
+---|----|---|----|---|---|---
+0pts|20pts|20pts|0pts|40pts|127|-89
+
+`Rating没了.jpg`
+
+~~不予置评（大雾弥漫~~
+
+#### Problem A
+
+[![nxyGjI.png](https://s2.ax1x.com/2019/09/21/nxyGjI.png)](https://imgchr.com/i/nxyGjI)
+
+
+思路错了（大雾弥漫
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long n, a[1001], t;
+
+int main(){
+    cin >> n;
+    for (int i = 0; i < n; i++){
+    	cin >> a[i];
+	}
+	sort(a, a + n);
+	t = unique(a, a + n) - a;
+	cout << n - t;
+	return 0;
+}
+
+```
+
+眼瞎没看到"连续字串"几个字，就用STL去了一遍重，输出
+
+一分也没有拿到（大雾弥漫
+
+#### Problem B
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long n, S, in[1001], out[1001], w[1001], s[1001], v[1000001], ans, logw, logv;
+
+int main(){
+    cin >> n >> S;
+    for (int i = 0; i < n; i++){
+    	cin >> in[i] >> out[i] >> w[i] >> s[i] >> v[i];
+    	if (logw + w[i] <= S && !(w[i] > s[i - 1])){
+    		ans += v[i];
+		}
+		if (logw + w[i] > S || w[i] > s[i - 1]){
+			if (ans - v[i - 1] + v[i] > ans){
+				ans -= v[i - 1];
+				ans += v[i];
+			}
+		}
+	}
+	cout << ans;
+	return 0;
+}
+
+```
+
+20pts，绝了（大雾弥漫
+
+我现在看到这我都不知道我是怎么写的了（
+
+
+
+
+
+
+### Day 2
+
+A | B | C | D | 总分 | Rank | Rating
+---|----|---|----|---|---|---
+10pts|70pts|0pts|0pts|80pts|94|+17
+
+#### Problem A
+
+[![nhPQfS.png](https://s2.ax1x.com/2019/09/16/nhPQfS.png)](https://imgchr.com/i/nhPQfS)
+
+上来先看了一眼题面，感觉挺简单的（错觉
+
+利用自己找的规律打了个表，规模自己体会（大雾弥漫
+
+后来好像发现表也打错了，前导`0`应该也要包括进去（大雾弥漫
+
+[![nhpGO1.png](https://s2.ax1x.com/2019/09/16/nhpGO1.png)](https://imgchr.com/i/nhpGO1)
+
+[![nhpzc9.png](https://s2.ax1x.com/2019/09/16/nhpzc9.png)](https://imgchr.com/i/nhpzc9)
+
+如果还不能清楚地了解代码规模，请看这个。
+
+[![nhCXQJ.png](https://s2.ax1x.com/2019/09/16/nhCXQJ.png)](https://imgchr.com/i/nhCXQJ)
+
+（我真搞不懂我哪来的闲心打这么大的表
+
+（大雾弥漫
+
+[![nhPWtK.png](https://s2.ax1x.com/2019/09/16/nhPWtK.png)](https://imgchr.com/i/nhPWtK)
+
+（我可能是全LYOI第一个打表`TLE`的人（雾
+
+#### Problem B
+
+[![nhPx1g.png](https://s2.ax1x.com/2019/09/16/nhPx1g.png)](https://imgchr.com/i/nhPx1g)
+
+稍微看了一下题面之后，就想到了一个玄学的方法
+
+（而且似乎不用专门判断是否为空串
+
+先把这个字符串里面的所有字串存好，再一个个判断里面 `A` `B` `C` 的数量是否相等
+
+总体的复杂度大约是 `O(n^2)`
+
+（真是个朴素的算法
+
+[![nhitjH.png](https://s2.ax1x.com/2019/09/16/nhitjH.png)](https://imgchr.com/i/nhitjH)
+
+然后，这个朴素的算法十分给面子，TLE了好几个（大雾弥漫
+
+（总体还不算太惨
+
+#### Problem C & Problem D
+
+做完了A题和B题就快没有时间了（还不是打表耗费了大量时间
+
+所以C和D我直接摸🐟了（大雾弥漫
+
+<font color="white">几乎没写</font>（大雾弥漫
+
+[未完待续]
+
+---
